@@ -16,6 +16,17 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        toolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(toolbar);
 
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
 }
