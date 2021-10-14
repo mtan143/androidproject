@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("RADAR");
 
 
     }
