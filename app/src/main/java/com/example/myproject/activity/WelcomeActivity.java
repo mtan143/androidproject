@@ -1,4 +1,4 @@
-package com.example.myproject;
+package com.example.myproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.myproject.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 
