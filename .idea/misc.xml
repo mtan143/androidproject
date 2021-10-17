@@ -3,15 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_home.xml" value="0.2694746376811594" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/shape_button.xml" value="0.12395833333333334" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_home.xml" value="0.22" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_main.xml" value="0.4466666666666667" />
+        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_welcome2.xml" value="0.17552083333333332" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_account.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_trend.xml" value="0.22" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/product_item.xml" value="0.1796875" />
+        <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_trend.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/menu/bottom_navigation.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/menu/main_manu.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/menu/main_menu.xml" value="0.1796875" />

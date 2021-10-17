@@ -52,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="340dp"
         android:text="WELCOME GUYS!"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +65,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="340dp"
         android:text="LET ENJOY RADAR'S WORLD"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -74,6 +76,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="340dp"
         android:text="LET'S GET STARTED"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
