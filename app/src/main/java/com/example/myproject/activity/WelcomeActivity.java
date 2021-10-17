@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.myproject.PrefManager;
 import com.example.myproject.R;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -27,6 +29,12 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (!PrefManager.getInstance(this).isFirstTimeLaunch()) {
+            Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         textView = findViewById(R.id.slogan);
         logo = findViewById(R.id.logo);
