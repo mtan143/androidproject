@@ -5,6 +5,12 @@
       <map>
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_home.xml" value="0.2694746376811594" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_account.xml" value="0.24818840579710144" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_bag.xml" value="0.24818840579710144" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_search.xml" value="0.24818840579710144" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_trend.xml" value="0.24818840579710144" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_wish_list.xml" value="0.24818840579710144" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/menu/bottom_navigation.xml" value="0.36666666666666664" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/shape_button.xml" value="0.12395833333333334" />
