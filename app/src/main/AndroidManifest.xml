@@ -13,6 +13,7 @@
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
             android:name=".activity.HomeActivity"
+            android:windowSoftInputMode="adjustPan|adjustResize"
             android:exported="true"
             android:logo="@drawable/black"/>
         <activity
