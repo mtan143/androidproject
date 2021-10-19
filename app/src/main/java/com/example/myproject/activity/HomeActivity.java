@@ -47,18 +47,23 @@ public class HomeActivity extends AppCompatActivity {
                 super.onPageSelected(position);
                 switch (position){
                     case 0:
+                        getSupportActionBar().setTitle("RADAR");
                         navigation.getMenu().findItem(R.id.home).setChecked(true);
                         break;
                     case 1:
+                        getSupportActionBar().setTitle("SEARCH");
                         navigation.getMenu().findItem(R.id.search).setChecked(true);
                         break;
                     case 2:
+                        getSupportActionBar().setTitle("FAVOURITE");
                         navigation.getMenu().findItem(R.id.favourite).setChecked(true);
                         break;
                     case 3:
+                        getSupportActionBar().setTitle("SHOPPING BAG");
                         navigation.getMenu().findItem(R.id.shoppingbag).setChecked(true);
                         break;
                     case 4:
+                        getSupportActionBar().setTitle("ACCOUNT");
                         navigation.getMenu().findItem(R.id.account).setChecked(true);
                         break;
                 }
@@ -119,6 +124,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
         });
+
 
     }
 
