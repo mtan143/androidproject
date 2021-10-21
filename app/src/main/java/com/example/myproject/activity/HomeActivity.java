@@ -1,22 +1,29 @@
 package com.example.myproject.activity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.annotation.SuppressLint;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.myproject.MyViewpager2Adapter;
 import com.example.myproject.R;
 import com.example.myproject.fragment.TrendFragment;
+import com.example.myproject.fragment.WishListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -30,13 +37,16 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+//        getSupportFragmentManager().beginTransaction().replace(R.id.my_nav, new TrendFragment()).commit();
+
         toolbar = findViewById(R.id.main_toolbar);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("RADAR");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("RADAR");
 
         navigation = findViewById(R.id.bottom_navigation);
         viewPager2 = findViewById(R.id.view_pager2);
+
 
         MyViewpager2Adapter adapter = new MyViewpager2Adapter(this);
         viewPager2.setAdapter(adapter);
@@ -47,23 +57,23 @@ public class HomeActivity extends AppCompatActivity {
                 super.onPageSelected(position);
                 switch (position){
                     case 0:
-                        getSupportActionBar().setTitle("RADAR");
+                        Objects.requireNonNull(getSupportActionBar()).setTitle("RADAR");
                         navigation.getMenu().findItem(R.id.home).setChecked(true);
                         break;
                     case 1:
-                        getSupportActionBar().setTitle("SEARCH");
+                        Objects.requireNonNull(getSupportActionBar()).setTitle("SHOP");
                         navigation.getMenu().findItem(R.id.search).setChecked(true);
                         break;
                     case 2:
-                        getSupportActionBar().setTitle("FAVOURITE");
+                        Objects.requireNonNull(getSupportActionBar()).setTitle("FAVOURITE");
                         navigation.getMenu().findItem(R.id.favourite).setChecked(true);
                         break;
                     case 3:
-                        getSupportActionBar().setTitle("SHOPPING BAG");
+                        Objects.requireNonNull(getSupportActionBar()).setTitle("SHOPPING BAG");
                         navigation.getMenu().findItem(R.id.shoppingbag).setChecked(true);
                         break;
                     case 4:
-                        getSupportActionBar().setTitle("ACCOUNT");
+                        Objects.requireNonNull(getSupportActionBar()).setTitle("ACCOUNT");
                         navigation.getMenu().findItem(R.id.account).setChecked(true);
                         break;
                 }
@@ -71,17 +81,10 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
-
-
-
-
 //        loadFragment(new TrendFragment());
 
         navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -91,33 +94,37 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.home:
                         getSupportActionBar().setTitle("RADAR");
                         viewPager2.setCurrentItem(0);
-                        fragment = new TrendFragment();
+//                        fragment = new TrendFragment();
 //                        loadFragment(fragment);
                         return true;
                     case R.id.search:
-                        getSupportActionBar().setTitle("SEARCH");
+                        getSupportActionBar().setTitle("SHOP");
                         viewPager2.setCurrentItem(1);
-                        fragment = new TrendFragment();
+//                        fragment = new TrendFragment();
 //                        loadFragment(fragment);
                         return true;
                     case R.id.favourite:
                         getSupportActionBar().setTitle("FAVOURITE");
                         viewPager2.setCurrentItem(2);
-                        fragment = new TrendFragment();
+//                        fragment = new TrendFragment();
 //                        loadFragment(fragment);
                         return true;
                     case R.id.shoppingbag:
                         getSupportActionBar().setTitle("SHOPPING BAG");
                         viewPager2.setCurrentItem(3);
-                        fragment = new TrendFragment();
+//                        fragment = new TrendFragment();
 //                        loadFragment(fragment);
                         return true;
                     case R.id.account:
                         getSupportActionBar().setTitle("ACCOUNT");
                         viewPager2.setCurrentItem(4);
-                        fragment = new TrendFragment();
+//                        fragment = new TrendFragment();
 //                        loadFragment(fragment);
                         return true;
+//                    case R.id.btnMen1:
+//                        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//                        viewPager2.setCurrentItem(5);
+//                        return true;
                 }
 
                 return false;
