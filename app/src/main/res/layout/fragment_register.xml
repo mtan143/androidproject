@@ -150,7 +150,9 @@
                     android:textColorHighlight="@color/white"
                     android:textColorHint="@color/white"
                     android:textColorLink="@color/white"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    tools:ignore="TouchTargetSizeCheck"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
