@@ -6,149 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".fragment.AccountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <TextView
-        android:id="@+id/login_fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="16dp"
-        android:text="LOGIN"
-        android:textColor="@color/white"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="210dp"
-        android:layout_height="450dp"
-        android:background="@drawable/ic_login_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view">
-
-        <Button
-            android:id="@+id/register_slide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/shape_button_slide"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="REGISTER"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/login_slide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LOGIN"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="6dp"
-                android:paddingStart="6dp"
-                android:theme="@style/InputText"
-                android:paddingEnd="6dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_email"
-                    android:hint=" Email"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/white"
-                    android:textColorHighlight="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textColorLink="@color/white"
-                    tools:ignore="TouchTargetSizeCheck" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="24dp"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
-                android:theme="@style/InputText"
-                app:passwordToggleDrawable="@drawable/ic_eye_password"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/white">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_lock"
-                    android:hint=" Password"
-                    android:inputType="text"
-                    android:textColor="@color/white"
-                    android:textColorHighlight="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textColorLink="@color/white"
-                    tools:ignore="TouchTargetSizeCheck"
-                    app:endIconMode="password_toggle"
-                    app:endIconTint="@color/black"/>
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/btnJoinRadar"
+        android:layout_width="@dimen/dp291"
+        android:layout_height="@dimen/dp53"
+        android:background="@drawable/button_shopnow"
+        android:text="@string/btnJoinRadar"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:background="@drawable/shape_button"
-        android:backgroundTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.253" />
+        android:layout_marginBottom="108dp"
+        android:text="@string/txtWelcome"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnJoinRadar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:text="@string/txtJoinNow"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnJoinRadar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

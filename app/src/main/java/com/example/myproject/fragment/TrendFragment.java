@@ -40,11 +40,12 @@ public class TrendFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Navigation.findNavController(mView).navigate(R.id.action_trendFragment_to_menFragment);
+//                Navigation.findNavController(mView).navigate(R.id.action_trendFragment_to_menFragment);
 
 //                Fragment fm2 = new MenFragment();
 //                FragmentTransaction ft = getFragmentManager().beginTransaction();
 //                ft.replace(R.id.my_nav, fm2).commit();
+
 
             }
         });
