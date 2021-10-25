@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
+            android:name=".activity.SearchActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.RegisterActivity"
             android:exported="true" />
         <activity

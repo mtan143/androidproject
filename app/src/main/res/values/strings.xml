@@ -9,5 +9,11 @@
     <string name="btnJoinRadar">JOIN RADAR</string>
     <string name="txtWelcome">get best moment with radar</string>
     <string name="txtJoinNow">JOIN NOW!</string>
+    <string name="search">Search</string>
+    <string name="seachview">Find Products…</string>
+    <string name="wishlistemty1">NOTHING SAVED YET</string>
+    <string name="wishlistemty2">Tap the heart icon to save items here for later.</string>
+    <string name="bag1">YOUR BAG IS EMPTY</string>
+    <string name="bag2">Why is that? Let\'s get creative</string>
 
 </resources>

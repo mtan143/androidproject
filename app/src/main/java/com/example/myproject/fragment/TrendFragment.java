@@ -39,6 +39,11 @@ public class TrendFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
+                MenFragment menFragment = new MenFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.trendFragment, menFragment)
+                        .addToBackStack(null)
+                        .commit();
 
 //                Navigation.findNavController(mView).navigate(R.id.action_trendFragment_to_menFragment);
 
