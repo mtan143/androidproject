@@ -9,5 +9,17 @@
     <string name="btnJoinRadar">JOIN RADAR</string>
     <string name="txtWelcome">get best moment with radar</string>
     <string name="txtJoinNow">JOIN NOW!</string>
+    <string name="txtShopNow">Shop Now</string>
+    <string name="txtWelGuy">WELCOME GUYS!</string>
+
+
+    <string-array name="menshop">
+        <item>Jacket</item>
+        <item>Pants</item>
+        <item>T-shirt</item>
+        <item>Denim</item>
+        <item>Coat</item>
+        <item>Sneakers</item>
+    </string-array>
 
 </resources>
