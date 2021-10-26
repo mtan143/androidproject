@@ -15,5 +15,17 @@
     <string name="wishlistemty2">Tap the heart icon to save items here for later.</string>
     <string name="bag1">YOUR BAG IS EMPTY</string>
     <string name="bag2">Why is that? Let\'s get creative</string>
+    <string name="txtShopNow">Shop Now</string>
+    <string name="txtWelGuy">WELCOME GUYS!</string>
+
+
+    <string-array name="menshop">
+        <item>Jacket</item>
+        <item>Pants</item>
+        <item>T-shirt</item>
+        <item>Denim</item>
+        <item>Coat</item>
+        <item>Sneakers</item>
+    </string-array>
 
 </resources>

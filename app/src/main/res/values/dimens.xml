@@ -17,4 +17,21 @@
     <dimen name="sp14">14sp</dimen>
     <dimen name="dp379">379dp</dimen>
     <dimen name="dp48">48dp</dimen>
+    <dimen name="dp407">407dp</dimen>
+    <dimen name="dp60">60dp</dimen>
+=======
+    <dimen name="dp200">200dp</dimen>
+    <dimen name="dp40">40dp</dimen>
+    <dimen name="dp43">43dp</dimen>
+    <dimen name="dp126">126dp</dimen>
+    <dimen name="dp620">620dp</dimen>
+    <dimen name="dp100">100dp</dimen>
+    <dimen name="dp44">44dp</dimen>
+    <dimen name="dp340">340dp</dimen>
+    <dimen name="sp20">20sp</dimen>
+    <dimen name="dp360">360dp</dimen>
+    <dimen name="dp222">222dp</dimen>
+    <dimen name="dp216">216dp</dimen>
+    <dimen name="dp73">73dp</dimen>
+>>>>>>> 2176f38c79728d835bea5e8041041c62a65db8d5:app/src/main/res/values/dimen.xml
 </resources>

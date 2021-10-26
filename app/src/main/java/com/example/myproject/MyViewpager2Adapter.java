@@ -7,8 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.myproject.fragment.AccountFragment;
 import com.example.myproject.fragment.BagFragment;
-import com.example.myproject.fragment.MenFragment;
-import com.example.myproject.fragment.SearchFragment;
+import com.example.myproject.fragment.ShopFragment;
 import com.example.myproject.fragment.TrendFragment;
 import com.example.myproject.fragment.WishListFragment;
 
@@ -24,7 +23,7 @@ public class MyViewpager2Adapter extends FragmentStateAdapter {
             case 0:
                 return new TrendFragment();
             case 1:
-                return new SearchFragment();
+                return new ShopFragment();
             case 2:
                 return new WishListFragment();
             case 3:
