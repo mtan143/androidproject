@@ -17,6 +17,13 @@
     <string name="bag2">Why is that? Let\'s get creative</string>
     <string name="txtShopNow">Shop Now</string>
     <string name="txtWelGuy">WELCOME GUYS!</string>
+    <string name="men">MEN</string>
+    <string name="jacket">JACKET</string>
+    <string name="pants">Pants</string>
+    <string name="t_shirt">T-shirt</string>
+    <string name="denim">Denim</string>
+    <string name="coat">Coat</string>
+    <string name="sneaker">Sneaker</string>
 
 
     <string-array name="menshop">

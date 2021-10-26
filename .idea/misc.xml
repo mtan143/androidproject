@@ -32,21 +32,21 @@
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/ic_shop.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/searchview_bg.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/shape_button.xml" value="0.12395833333333334" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_home.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_mencategory.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_register.xml" value="0.165625" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_search.xml" value="0.3333333333333333" />
+        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_search.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_welcome2.xml" value="0.17552083333333332" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/btn_shopnow.xml" value="0.12" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_account.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_bag.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_men.xml" value="0.165625" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_men_category.xml" value="0.1796875" />
+        <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_men_category.xml" value="0.22" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_profile.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_register.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_shop.xml" value="0.1796875" />
+        <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_shop.xml" value="0.22" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_trend.xml" value="0.16666666666666666" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_wish_list.xml" value="0.5" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/product_item.xml" value="0.1796875" />

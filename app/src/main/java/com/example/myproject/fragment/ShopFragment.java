@@ -1,5 +1,6 @@
 package com.example.myproject.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.myproject.R;
 import com.example.myproject.ShopFragmentAdapter;
@@ -36,24 +38,15 @@ public class ShopFragment extends Fragment {
         // Inflate the layout for this fragment
         mView = inflater.inflate(R.layout.fragment_shop, container, false);
 
-        tabLayout = mView.findViewById(R.id.tab_layout);
-        viewPager = mView.findViewById(R.id.view_pager);
-
-        adapter = new ShopFragmentAdapter(getActivity());
-
-        viewPager.setAdapter(adapter);
-
-        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
-            switch (position) {
-
-                case 0:
-                    tab.setText("Men");
-                    break;
-                case 1:
-                    tab.setText("Woman");
-                    break;
+        Button menCate1 = mView.findViewById(R.id.menCate1);
+        menCate1.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
+            @Override
+            public void onClick(View view) {
+                menCate1.setBackgroundColor(R.color.white);
+                menCate1.setTextColor(R.color.black);
             }
-        }).attach();
+        });
 
         return mView;
     }

@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/fashion"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="410dp"
+            android:layout_height="254dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:adjustViewBounds="true"
@@ -45,20 +45,22 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
-        android:layout_width="414dp"
-        android:layout_height="499dp"
-        tools:layout_editor_absoluteY="229dp"
-        tools:ignore="MissingConstraints">
+<!--    <FrameLayout-->
+<!--        android:layout_width="414dp"-->
+<!--        android:layout_height="499dp"-->
+<!--        tools:layout_editor_absoluteY="229dp"-->
+<!--        tools:ignore="MissingConstraints">-->
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="409dp"
-            android:layout_height="500dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="231dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="477dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="254dp" />
 
-    </FrameLayout>
+    <!--    </FrameLayout>-->
 
 
 
