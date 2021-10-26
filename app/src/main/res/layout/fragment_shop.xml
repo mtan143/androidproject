@@ -101,6 +101,98 @@
                 app:layout_constraintStart_toEndOf="@+id/menCate4"
                 app:layout_constraintTop_toBottomOf="@+id/menCate2" />
 
+            <Button
+                android:id="@+id/womanBtn"
+                android:layout_width="412dp"
+                android:layout_height="56dp"
+                android:background="@color/black"
+                android:text="@string/woman"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menCate3" />
+
+            <Button
+                android:id="@+id/wmanCate1"
+                android:layout_width="@dimen/dp200"
+                android:layout_height="@dimen/dp126"
+                android:background="@color/white"
+                android:text="@string/shirt"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/womanBtn" />
+
+            <Button
+                android:id="@+id/wmanCate2"
+                android:layout_width="114dp"
+                android:layout_height="207dp"
+                android:background="@color/black"
+                android:text="@string/t_shirt"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/wmanCate1"
+                app:layout_constraintTop_toBottomOf="@+id/womanBtn" />
+
+            <Button
+                android:id="@+id/wmanCate3"
+                android:layout_width="94dp"
+                android:layout_height="77dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="1dp"
+                android:background="@color/white"
+                android:text="@string/bag"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/wmanCate2"
+                app:layout_constraintTop_toBottomOf="@+id/womanBtn" />
+
+            <Button
+                android:id="@+id/wmanCate4"
+                android:layout_width="96dp"
+                android:layout_height="206dp"
+                android:background="@color/black"
+                android:text="@string/shoes"
+                app:layout_constraintBottom_toTopOf="@+id/wmanCate7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wmanCate3" />
+
+            <Button
+                android:id="@+id/wmanCate5"
+                android:layout_width="201dp"
+                android:layout_height="319dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/black"
+                android:text="@string/pants"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wmanCate1" />
+
+            <Button
+                android:id="@+id/wmanCate6"
+                android:layout_width="110dp"
+                android:layout_height="77dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:text="@string/jacket"
+                app:layout_constraintEnd_toStartOf="@+id/wmanCate4"
+                app:layout_constraintStart_toEndOf="@+id/wmanCate5"
+                app:layout_constraintTop_toBottomOf="@+id/wmanCate2" />
+
+            <Button
+                android:id="@+id/wmanCate7"
+                android:layout_width="208dp"
+                android:layout_height="164dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:text="@string/swimwear"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/wmanCate5" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

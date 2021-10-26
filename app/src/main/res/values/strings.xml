@@ -24,6 +24,11 @@
     <string name="denim">Denim</string>
     <string name="coat">Coat</string>
     <string name="sneaker">Sneaker</string>
+    <string name="woman">WOMAN</string>
+    <string name="shirt">Shirt</string>
+    <string name="bag">Bag</string>
+    <string name="shoes">Shoes</string>
+    <string name="swimwear">Swimwear</string>
 
 
     <string-array name="menshop">
@@ -33,6 +38,16 @@
         <item>Denim</item>
         <item>Coat</item>
         <item>Sneakers</item>
+    </string-array>
+
+    <string-array name="womanshop">
+        <item>Shirt</item>
+        <item>T-shirt</item>
+        <item>Bag</item>
+        <item>Shoes</item>
+        <item>Pants</item>
+        <item>Jacket</item>
+        <item>Swimwear</item>
     </string-array>
 
 </resources>
