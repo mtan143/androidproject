@@ -168,13 +168,15 @@
 
             <Button
                 android:id="@+id/wmanCate6"
-                android:layout_width="110dp"
-                android:layout_height="77dp"
+                android:layout_width="112dp"
+                android:layout_height="72dp"
                 android:layout_marginStart="1dp"
                 android:layout_marginEnd="1dp"
+                android:layout_marginBottom="4dp"
                 android:background="@color/white"
-                android:textColor="@color/black"
                 android:text="@string/jacket"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/wmanCate7"
                 app:layout_constraintEnd_toStartOf="@+id/wmanCate4"
                 app:layout_constraintStart_toEndOf="@+id/wmanCate5"
                 app:layout_constraintTop_toBottomOf="@+id/wmanCate2" />

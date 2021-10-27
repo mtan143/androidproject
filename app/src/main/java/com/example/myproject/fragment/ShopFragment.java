@@ -40,7 +40,10 @@ public class ShopFragment extends Fragment {
         // Inflate the layout for this fragment
         mView = inflater.inflate(R.layout.fragment_shop, container, false);
 
-        Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.fadeinlogo);
+        Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.lefttoright);
+        Animation animation1 = AnimationUtils.loadAnimation(getContext(), R.anim.righttoleft);
+        Animation animation2 = AnimationUtils.loadAnimation(getContext(), R.anim.lefttoright);
+        Animation animation3 = AnimationUtils.loadAnimation(getContext(), R.anim.righttoleft);
         Button menBtn = mView.findViewById(R.id.menBtn);
         Button menCate1 = mView.findViewById(R.id.menCate1);
         Button menCate2 = mView.findViewById(R.id.menCate2);
@@ -58,19 +61,19 @@ public class ShopFragment extends Fragment {
         Button wmanCate7 = mView.findViewById(R.id.wmanCate7);
 
         menBtn.startAnimation(animation);
-        menCate1.startAnimation(animation);
-        menCate2.startAnimation(animation);
-        menCate3.startAnimation(animation);
-        menCate4.startAnimation(animation);
+        menCate1.startAnimation(animation1);
+        menCate2.startAnimation(animation2);
+        menCate3.startAnimation(animation3);
+        menCate4.startAnimation(animation1);
         menCate5.startAnimation(animation);
-        menCate6.startAnimation(animation);
-        wmanBtn.startAnimation(animation);
+        menCate6.startAnimation(animation2);
+        wmanBtn.startAnimation(animation3);
         wmanCate1.startAnimation(animation);
-        wmanCate2.startAnimation(animation);
-        wmanCate3.startAnimation(animation);
-        wmanCate4.startAnimation(animation);
-        wmanCate5.startAnimation(animation);
-        wmanCate6.startAnimation(animation);
+        wmanCate2.startAnimation(animation1);
+        wmanCate3.startAnimation(animation3);
+        wmanCate4.startAnimation(animation2);
+        wmanCate5.startAnimation(animation2);
+        wmanCate6.startAnimation(animation1);
         wmanCate7.startAnimation(animation);
         return mView;
     }
