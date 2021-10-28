@@ -29,15 +29,16 @@
     <string name="bag">Bag</string>
     <string name="shoes">Shoes</string>
     <string name="swimwear">Swimwear</string>
-
+    <string name="title">Title</string>
 
     <string-array name="menshop">
         <item>Jacket</item>
         <item>Pants</item>
-        <item>T-shirt</item>
+        <item>T-Shirt</item>
         <item>Denim</item>
         <item>Coat</item>
         <item>Sneakers</item>
+        <item>Bag</item>
     </string-array>
 
     <string-array name="womanshop">

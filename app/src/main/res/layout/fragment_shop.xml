@@ -26,8 +26,8 @@
 
             <Button
                 android:id="@+id/menBtn"
-                android:layout_width="412dp"
-                android:layout_height="56dp"
+                android:layout_width="@dimen/dp412"
+                android:layout_height="@dimen/dp56"
                 android:background="@color/white"
                 android:text="@string/men"
                 android:textColor="@color/black" />
@@ -44,9 +44,9 @@
 
             <Button
                 android:id="@+id/menCate2"
-                android:layout_width="124dp"
-                android:layout_height="346dp"
-                android:layout_marginEnd="4dp"
+                android:layout_width="@dimen/dp124"
+                android:layout_height="@dimen/dp346"
+                android:layout_marginEnd="@dimen/dp4"
                 android:background="@color/white"
                 android:text="@string/pants"
                 android:textColor="@color/black"
@@ -56,8 +56,8 @@
 
             <Button
                 android:id="@+id/menCate3"
-                android:layout_width="130dp"
-                android:layout_height="248dp"
+                android:layout_width="@dimen/dp130"
+                android:layout_height="@dimen/dp248"
                 android:background="@color/white"
                 android:text="@string/t_shirt"
                 android:textColor="@color/black"
@@ -66,10 +66,10 @@
 
             <Button
                 android:id="@+id/menCate4"
-                android:layout_width="154dp"
-                android:layout_height="118dp"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="1dp"
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp118"
+                android:layout_marginStart="@dimen/dp2"
+                android:layout_marginEnd="@dimen/dp1"
                 android:background="@color/black"
                 android:text="@string/denim"
                 app:layout_constraintBottom_toTopOf="@+id/menCate5"
@@ -79,8 +79,8 @@
 
             <Button
                 android:id="@+id/menCate5"
-                android:layout_width="154dp"
-                android:layout_height="130dp"
+                android:layout_width="@dimen/dp154"
+                android:layout_height="@dimen/dp130"
                 android:background="@color/white"
                 android:text="@string/coat"
                 android:textColor="@color/black"
@@ -91,10 +91,10 @@
 
             <Button
                 android:id="@+id/menCate6"
-                android:layout_width="124dp"
-                android:layout_height="192dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="1dp"
+                android:layout_width="@dimen/dp124"
+                android:layout_height="@dimen/dp192"
+                android:layout_marginStart="@dimen/dp1"
+                android:layout_marginTop="@dimen/dp1"
                 android:background="@color/black"
                 android:text="@string/sneaker"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -103,8 +103,8 @@
 
             <Button
                 android:id="@+id/womanBtn"
-                android:layout_width="412dp"
-                android:layout_height="56dp"
+                android:layout_width="@dimen/dp412"
+                android:layout_height="@dimen/dp56"
                 android:background="@color/black"
                 android:text="@string/woman"
                 android:textColor="@color/white"
@@ -114,8 +114,8 @@
 
             <Button
                 android:id="@+id/wmanCate1"
-                android:layout_width="@dimen/dp200"
-                android:layout_height="@dimen/dp126"
+                android:layout_width="@dimen/dp201"
+                android:layout_height="@dimen/dp139"
                 android:background="@color/white"
                 android:text="@string/shirt"
                 android:textColor="@color/black"
@@ -124,8 +124,8 @@
 
             <Button
                 android:id="@+id/wmanCate2"
-                android:layout_width="114dp"
-                android:layout_height="207dp"
+                android:layout_width="@dimen/dp114"
+                android:layout_height="@dimen/dp207"
                 android:background="@color/black"
                 android:text="@string/t_shirt"
                 android:textColor="@color/white"
@@ -134,10 +134,10 @@
 
             <Button
                 android:id="@+id/wmanCate3"
-                android:layout_width="94dp"
-                android:layout_height="77dp"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="1dp"
+                android:layout_width="@dimen/dp94"
+                android:layout_height="@dimen/dp77"
+                android:layout_marginStart="@dimen/dp2"
+                android:layout_marginEnd="@dimen/dp1"
                 android:background="@color/white"
                 android:text="@string/bag"
                 android:textColor="@color/black"
@@ -147,8 +147,8 @@
 
             <Button
                 android:id="@+id/wmanCate4"
-                android:layout_width="96dp"
-                android:layout_height="206dp"
+                android:layout_width="@dimen/dp96"
+                android:layout_height="@dimen/dp226"
                 android:background="@color/black"
                 android:text="@string/shoes"
                 app:layout_constraintBottom_toTopOf="@+id/wmanCate7"
@@ -157,9 +157,9 @@
 
             <Button
                 android:id="@+id/wmanCate5"
-                android:layout_width="201dp"
-                android:layout_height="319dp"
-                android:layout_marginTop="2dp"
+                android:layout_width="@dimen/dp201"
+                android:layout_height="@dimen/dp319"
+                android:layout_marginTop="@dimen/dp2"
                 android:background="@color/black"
                 android:text="@string/pants"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -168,11 +168,11 @@
 
             <Button
                 android:id="@+id/wmanCate6"
-                android:layout_width="112dp"
-                android:layout_height="72dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginEnd="1dp"
-                android:layout_marginBottom="4dp"
+                android:layout_width="@dimen/dp115"
+                android:layout_height="@dimen/dp86"
+                android:layout_marginStart="@dimen/dp1"
+                android:layout_marginEnd="@dimen/dp1"
+                android:layout_marginBottom="@dimen/dp5"
                 android:background="@color/white"
                 android:text="@string/jacket"
                 android:textColor="@color/black"
@@ -183,10 +183,10 @@
 
             <Button
                 android:id="@+id/wmanCate7"
-                android:layout_width="208dp"
-                android:layout_height="164dp"
-                android:layout_marginStart="2dp"
-                android:layout_marginBottom="2dp"
+                android:layout_width="@dimen/dp208"
+                android:layout_height="@dimen/dp164"
+                android:layout_marginStart="@dimen/dp2"
+                android:layout_marginBottom="@dimen/dp2"
                 android:background="@color/white"
                 android:textColor="@color/black"
                 android:text="@string/swimwear"

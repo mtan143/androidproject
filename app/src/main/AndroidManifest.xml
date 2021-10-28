@@ -13,6 +13,45 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
+            android:name=".category.SwimwearWomanCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.ShoesWomanCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.JacketWomanCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.PantsWomanCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.BagWomanCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.TshirtWomanCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.ShirtWomanCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.SneakersMenCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.DenimMenCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.CoatMenCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.TshirtMenCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.PantsMenCategory"
+            android:exported="true" />
+        <activity
+            android:name=".category.JacketMenCategory"
+            android:exported="true" />
+        <activity
             android:name=".activity.SearchActivity"
             android:exported="true" />
         <activity
@@ -35,6 +74,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

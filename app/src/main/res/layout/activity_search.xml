@@ -15,6 +15,7 @@
         android:iconifiedByDefault="false"
         android:queryHint="@string/seachview"
         android:searchIcon="@null"
+        android:theme="@style/InputText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
