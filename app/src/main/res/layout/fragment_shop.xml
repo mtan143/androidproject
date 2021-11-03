@@ -45,8 +45,8 @@
             <Button
                 android:id="@+id/menCate2"
                 android:layout_width="@dimen/dp124"
-                android:layout_height="@dimen/dp346"
-                android:layout_marginEnd="@dimen/dp4"
+                android:layout_height="@dimen/dp344"
+                android:layout_marginTop="8dp"
                 android:background="@color/white"
                 android:text="@string/pants"
                 android:textColor="@color/black"
@@ -56,7 +56,7 @@
 
             <Button
                 android:id="@+id/menCate3"
-                android:layout_width="@dimen/dp130"
+                android:layout_width="@dimen/dp124"
                 android:layout_height="@dimen/dp248"
                 android:background="@color/white"
                 android:text="@string/t_shirt"
@@ -66,9 +66,9 @@
 
             <Button
                 android:id="@+id/menCate4"
-                android:layout_width="@dimen/dp149"
+                android:layout_width="@dimen/dp140"
                 android:layout_height="@dimen/dp118"
-                android:layout_marginStart="@dimen/dp2"
+                android:layout_marginStart="11dp"
                 android:layout_marginEnd="@dimen/dp1"
                 android:background="@color/black"
                 android:text="@string/denim"
@@ -79,14 +79,14 @@
 
             <Button
                 android:id="@+id/menCate5"
-                android:layout_width="@dimen/dp154"
+                android:layout_width="@dimen/dp140"
                 android:layout_height="@dimen/dp130"
+                android:layout_marginStart="12dp"
                 android:background="@color/white"
                 android:text="@string/coat"
                 android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.513"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/menCate6"
+                app:layout_constraintStart_toEndOf="@+id/menCate3"
                 app:layout_constraintTop_toBottomOf="@+id/menCate4" />
 
             <Button
@@ -114,7 +114,7 @@
 
             <Button
                 android:id="@+id/wmanCate1"
-                android:layout_width="@dimen/dp201"
+                android:layout_width="@dimen/dp191"
                 android:layout_height="@dimen/dp139"
                 android:background="@color/white"
                 android:text="@string/shirt"
