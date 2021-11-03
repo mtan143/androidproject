@@ -6,12 +6,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
 
 import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DBNAME = "Users.db";
+    public static final String DBNAME = "ProductManager.db";
 
     public DBHelper(Context context) {
         super(context, DBNAME, null, 1);
@@ -21,6 +22,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase myDB) {
 
         myDB.execSQL("create table users(username text primary key, password text)");
+        myDB.execSQL("create table product(id number primary key, name text, descriotion text, price number)");
+
 
     }
 
@@ -41,6 +44,19 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return result != -1;
 
+    }
+
+    public  Boolean insertProduct(Integer id, String name, String description, Integer price, Bitmap image ){
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("id", id);
+        contentValues.put("name", name);
+        contentValues.put("description", description);
+        contentValues.put("price", price);
+//        contentValues.put("image", image);
+        long result = myDB.insert("users", null, contentValues);
+
+        return result != -1;
     }
 
     public Boolean checkUsername(String username) {

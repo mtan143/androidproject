@@ -10,9 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.myproject.MenRecyclerViewAdapter;
 import com.example.myproject.R;
-import com.example.myproject.WomanRecyclerViewAdapter;
+import com.example.myproject.Adapter.WomanRecyclerViewAdapter;
 
 
 public class WomanCategoryFragment extends Fragment {

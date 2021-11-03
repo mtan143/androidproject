@@ -61,4 +61,5 @@
     <dimen name="dp208">208dp</dimen>
     <dimen name="dp164">164dp</dimen>
     <dimen name="dp50">50dp</dimen>
+    <dimen name="dp149">149dp</dimen>
 </resources>

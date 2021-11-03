@@ -1,12 +1,10 @@
 package com.example.myproject.fragment;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
@@ -17,9 +15,21 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.myproject.R;
-import com.example.myproject.ShopFragmentAdapter;
+import com.example.myproject.Adapter.ShopFragmentAdapter;
+import com.example.myproject.category.BagWomanCategory;
+import com.example.myproject.category.CoatMenCategory;
+import com.example.myproject.category.DenimMenCategory;
+import com.example.myproject.category.JacketMenCategory;
+import com.example.myproject.category.JacketWomanCategory;
+import com.example.myproject.category.PantsMenCategory;
+import com.example.myproject.category.PantsWomanCategory;
+import com.example.myproject.category.ShirtWomanCategory;
+import com.example.myproject.category.ShoesWomanCategory;
+import com.example.myproject.category.SneakersMenCategory;
+import com.example.myproject.category.SwimwearWomanCategory;
+import com.example.myproject.category.TshirtMenCategory;
+import com.example.myproject.category.TshirtWomanCategory;
 import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,36 +55,183 @@ public class ShopFragment extends Fragment {
         Animation animation2 = AnimationUtils.loadAnimation(getContext(), R.anim.lefttoright);
         Animation animation3 = AnimationUtils.loadAnimation(getContext(), R.anim.righttoleft);
         Button menBtn = mView.findViewById(R.id.menBtn);
-        Button menCate1 = mView.findViewById(R.id.menCate1);
-        Button menCate2 = mView.findViewById(R.id.menCate2);
-        Button menCate3 = mView.findViewById(R.id.menCate3);
-        Button menCate4 = mView.findViewById(R.id.menCate4);
-        Button menCate5 = mView.findViewById(R.id.menCate5);
-        Button menCate6 = mView.findViewById(R.id.menCate6);
+        Button JacketmenCate = mView.findViewById(R.id.menCate1);
+        Button PantmenCate = mView.findViewById(R.id.menCate2);
+        Button TshirtmenCate = mView.findViewById(R.id.menCate3);
+        Button DenimmenCate = mView.findViewById(R.id.menCate4);
+        Button CoatmenCate = mView.findViewById(R.id.menCate5);
+        Button SneakermenCate = mView.findViewById(R.id.menCate6);
         Button wmanBtn = mView.findViewById(R.id.womanBtn);
-        Button wmanCate1 = mView.findViewById(R.id.wmanCate1);
-        Button wmanCate2 = mView.findViewById(R.id.wmanCate2);
-        Button wmanCate3 = mView.findViewById(R.id.wmanCate3);
-        Button wmanCate4 = mView.findViewById(R.id.wmanCate4);
-        Button wmanCate5 = mView.findViewById(R.id.wmanCate5);
-        Button wmanCate6 = mView.findViewById(R.id.wmanCate6);
-        Button wmanCate7 = mView.findViewById(R.id.wmanCate7);
+        Button ShirtwmanCate = mView.findViewById(R.id.wmanCate1);
+        Button TshirtwmanCate = mView.findViewById(R.id.wmanCate2);
+        Button BagwmanCate = mView.findViewById(R.id.wmanCate3);
+        Button ShoewmanCate = mView.findViewById(R.id.wmanCate4);
+        Button PantwmanCate = mView.findViewById(R.id.wmanCate5);
+        Button JacketwmanCate = mView.findViewById(R.id.wmanCate6);
+        Button SwimwearwmanCate = mView.findViewById(R.id.wmanCate7);
 
         menBtn.startAnimation(animation);
-        menCate1.startAnimation(animation1);
-        menCate2.startAnimation(animation2);
-        menCate3.startAnimation(animation3);
-        menCate4.startAnimation(animation1);
-        menCate5.startAnimation(animation);
-        menCate6.startAnimation(animation2);
+        JacketmenCate.startAnimation(animation1);
+        PantmenCate.startAnimation(animation2);
+        TshirtmenCate.startAnimation(animation3);
+        DenimmenCate.startAnimation(animation1);
+        CoatmenCate.startAnimation(animation);
+        SneakermenCate.startAnimation(animation2);
         wmanBtn.startAnimation(animation3);
-        wmanCate1.startAnimation(animation);
-        wmanCate2.startAnimation(animation1);
-        wmanCate3.startAnimation(animation3);
-        wmanCate4.startAnimation(animation2);
-        wmanCate5.startAnimation(animation2);
-        wmanCate6.startAnimation(animation1);
-        wmanCate7.startAnimation(animation);
+        ShirtwmanCate.startAnimation(animation);
+        TshirtwmanCate.startAnimation(animation1);
+        BagwmanCate.startAnimation(animation3);
+        ShoewmanCate.startAnimation(animation2);
+        PantwmanCate.startAnimation(animation2);
+        JacketwmanCate.startAnimation(animation1);
+        SwimwearwmanCate.startAnimation(animation);
+
+
+        //Men Category button
+        JacketmenCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), JacketMenCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        PantmenCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), PantsMenCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        TshirtmenCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), TshirtMenCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        DenimmenCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), DenimMenCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        CoatmenCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), CoatMenCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        SneakermenCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), SneakersMenCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        //Woman category button
+        ShirtwmanCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), ShirtWomanCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        TshirtwmanCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), TshirtWomanCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        BagwmanCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), BagWomanCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        ShoewmanCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), ShoesWomanCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        PantwmanCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), PantsWomanCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        JacketwmanCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), JacketWomanCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        SwimwearwmanCate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), SwimwearWomanCategory.class);
+
+                startActivity(intent);
+
+            }
+        });
+
         return mView;
     }
 }
