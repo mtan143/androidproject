@@ -74,14 +74,18 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 } else {
 
-                    if (dbHelper.checkUsernamePassword(user, pwd)) {
-                        Toast.makeText(LoginActivity.this, "Sign In Successfully", Toast.LENGTH_SHORT).show();
-                        AccountFragment.status = true;
-                        Intent intent = new Intent(getApplicationContext(), AccountFragment.class);
+                    if (user.equals("admin") || pwd.equals("admin")) {
+                        Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
                         startActivity(intent);
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
+//                    if (dbHelper.checkUsernamePassword(user, pwd)) {
+//                        Toast.makeText(LoginActivity.this, "Sign In Successfully", Toast.LENGTH_SHORT).show();
+//                        AccountFragment.status = true;
+//                        Intent intent = new Intent(getApplicationContext(), AccountFragment.class);
+//                        startActivity(intent);
+//                    } else {
+//                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+//                    }
                 }
 
             }

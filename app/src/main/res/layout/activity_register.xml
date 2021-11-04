@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activity.RegisterActivity">
 
-    <TextView
-        android:id="@+id/btnClose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp16"
-        android:layout_marginEnd="@dimen/dp16"
-        app:drawableStartCompat="@drawable/ic_baseline_close_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/login_fragment"

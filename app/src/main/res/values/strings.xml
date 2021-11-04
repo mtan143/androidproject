@@ -30,6 +30,8 @@
     <string name="shoes">Shoes</string>
     <string name="swimwear">Swimwear</string>
     <string name="title">Title</string>
+    <string name="plusSign">+</string>
+    <string name="forgot_password">Forgot Password?</string>
 
     <string-array name="menshop">
         <item>Jacket</item>
