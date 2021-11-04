@@ -116,11 +116,11 @@
                 android:paddingEnd="@dimen/dp6">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_email"
-                    android:hint="@string/txtUsername"
+                    android:hint="@string/txtEmail"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/white"
                     android:textColorHighlight="@color/white"

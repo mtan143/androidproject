@@ -128,7 +128,7 @@ public class RegisterActivity extends AppCompatActivity{
         }
 
         if (uPwd.length() < 6) {
-            password.setError("Password must be greater then 6!");
+            password.setError("Password must be greater than 6!");
             password.requestFocus();
             return;
         }
@@ -153,7 +153,7 @@ public class RegisterActivity extends AppCompatActivity{
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(RegisterActivity.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
-                                        startActivity(new Intent(getApplicationContext(), AccountFragment.class));
+                                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                                     } else {
                                         Toast.makeText(RegisterActivity.this, "Register Failed! Try again!", Toast.LENGTH_LONG).show();
                                     }
