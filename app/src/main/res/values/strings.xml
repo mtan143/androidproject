@@ -32,6 +32,8 @@
     <string name="title">Title</string>
     <string name="plusSign">+</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="type_your_email">Type your email...</string>
+    <string name="reset_password">Reset Password</string>
 
     <string-array name="menshop">
         <item>Jacket</item>

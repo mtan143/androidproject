@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText email;
     EditText password;
     Button btnLogin;
+    TextView forgotPassword;
     DBHelper dbHelper;
     FirebaseAuth mAuth;
 
@@ -44,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btnLogin = findViewById(R.id.login_button);
+        forgotPassword = findViewById(R.id.forgotPassword);
         dbHelper = new DBHelper(this);
         mAuth = FirebaseAuth.getInstance();
 
@@ -71,12 +73,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
+            }
+        });
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 userLogin();
-
 //                if (user.equals("") || pwd.equals("")) {
 //                    Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
 //                } else {
