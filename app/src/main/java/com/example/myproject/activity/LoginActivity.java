@@ -134,7 +134,14 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
+
+                        if (task.isSuccessful() && uEmail.equals("admin@gmail.com") && pwd.equals("adminadmin")) {
+                            Toast.makeText(LoginActivity.this, "Login as ADMIN ROLE successful!",
+                                    Toast.LENGTH_SHORT).show();
+
+                            startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                        } else if (task.isSuccessful()) {
+
                             Toast.makeText(LoginActivity.this, "Login successful!",
                                     Toast.LENGTH_SHORT).show();
 

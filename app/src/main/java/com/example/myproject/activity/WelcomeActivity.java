@@ -3,17 +3,15 @@ package com.example.myproject.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.myproject.PrefManager;
 import com.example.myproject.R;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -30,9 +28,20 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (!PrefManager.getInstance(this).isFirstTimeLaunch()) {
+//        if (!PrefManager.getInstance(this).isFirstTimeLaunch()) {
+//            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+//        }
+        SharedPreferences sharedPreferences = getSharedPreferences("prefs", MODE_PRIVATE);
+        String firstTime = sharedPreferences.getString("firstTime", "");
+
+        if (firstTime.equals("Yes")) {
             startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+        } else {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("firstTime", "Yes");
+            editor.apply();
         }
+
 
         textView = findViewById(R.id.slogan);
         logo = findViewById(R.id.logo);

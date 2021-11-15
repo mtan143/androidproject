@@ -8,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,11 +32,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-//        getSupportFragmentManager().beginTransaction().replace(R.id.my_nav, new TrendFragment()).commit();
-
-//        finish();
-//        startActivity(getIntent());
 
         toolbar = findViewById(R.id.main_toolbar);
 
