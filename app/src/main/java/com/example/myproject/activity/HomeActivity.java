@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.myproject.Adapter.MyViewpager2Adapter;
+import com.example.myproject.adapter.MyViewpager2Adapter;
 import com.example.myproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -26,12 +26,16 @@ public class HomeActivity extends AppCompatActivity {
     ViewPager2 viewPager2;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
 //        getSupportFragmentManager().beginTransaction().replace(R.id.my_nav, new TrendFragment()).commit();
+
+//        finish();
+//        startActivity(getIntent());
 
         toolbar = findViewById(R.id.main_toolbar);
 

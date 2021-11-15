@@ -1,4 +1,4 @@
-package com.example.myproject.Adapter;
+package com.example.myproject.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -7,13 +7,20 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.myproject.fragment.AccountFragment;
 import com.example.myproject.fragment.BagFragment;
+import com.example.myproject.fragment.ProfileFragment;
 import com.example.myproject.fragment.ShopFragment;
 import com.example.myproject.fragment.TrendFragment;
 import com.example.myproject.fragment.WishListFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MyViewpager2Adapter extends FragmentStateAdapter {
+
+    FirebaseAuth mAuth;
+
     public MyViewpager2Adapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
+        mAuth = FirebaseAuth.getInstance();
+
     }
 
     @NonNull
@@ -29,9 +36,10 @@ public class MyViewpager2Adapter extends FragmentStateAdapter {
             case 3:
                 return new BagFragment();
             case 4:
+                if (mAuth.getCurrentUser() != null) {
+                    return new ProfileFragment();
+                }
                 return new AccountFragment();
-//            case 5:
-//                return new MenFragment();
             default:
                 return new TrendFragment();
         }

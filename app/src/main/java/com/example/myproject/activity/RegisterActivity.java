@@ -32,7 +32,6 @@ public class RegisterActivity extends AppCompatActivity{
     EditText password;
     Button btnRegister;
     private FirebaseAuth mAuth;
-//    DBHelper dbHelper;
 
 
     @Override
@@ -49,7 +48,6 @@ public class RegisterActivity extends AppCompatActivity{
         btnRegister = findViewById(R.id.btnRegister);
 
         mAuth = FirebaseAuth.getInstance();
-//        dbHelper = new DBHelper(this);
 
         //switch to login slide
         loginSlide.setOnClickListener(new View.OnClickListener() {
@@ -66,35 +64,6 @@ public class RegisterActivity extends AppCompatActivity{
                 registerUser();
             }
         });
-
-
-//        btnRegister.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                String user = username.getText().toString();
-//                String mail = email.getText().toString();
-//                String pwd = password.getText().toString();
-//
-//                if (user.equals("") || mail.equals("") || pwd.equals(""))
-//                    Toast.makeText(RegisterActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-//
-//                if (!dbHelper.checkUsername(user)) {
-//
-//                    if (dbHelper.insertData(user, pwd)) {
-//
-//                        Toast.makeText(RegisterActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
-//                        Intent intent = new Intent(getApplicationContext(), AccountFragment.class);
-//                        startActivity(intent);
-//
-//                    } else {
-//                        Toast.makeText(RegisterActivity.this, "Registered Failed", Toast.LENGTH_SHORT).show();
-//                    }
-//                } else {
-//                    Toast.makeText(RegisterActivity.this, "User already exists! Please sign in", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
     }
 
     @Override
@@ -139,31 +108,45 @@ public class RegisterActivity extends AppCompatActivity{
             return;
         }
 
-        mAuth.createUserWithEmailAndPassword(uEmail, uPwd)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(new User(uName, uEmail)).addOnCompleteListener(new OnCompleteListener<Void>() {
-
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(RegisterActivity.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
-                                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                                    } else {
-                                        Toast.makeText(RegisterActivity.this, "Register Failed! Try again!", Toast.LENGTH_LONG).show();
-                                    }
-                                }
-                            });
-                        } else {
-                            Toast.makeText(RegisterActivity.this, "Register Failed!", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
+//        mAuth.createUserWithEmailAndPassword(uEmail, uPwd)
+//                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if (task.isSuccessful()) {
+//                            FirebaseDatabase.getInstance().getReference("Users")
+//                                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
+//                                    .setValue(new User(uName, uEmail)).addOnCompleteListener(new OnCompleteListener<Void>() {
+//
+//                                @Override
+//                                public void onComplete(@NonNull Task<Void> task) {
+//                                    if (task.isSuccessful()) {
+//                                        Toast.makeText(RegisterActivity.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
+//                                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+//                                    } else {
+//                                        Toast.makeText(RegisterActivity.this, "Register Failed! Try again!", Toast.LENGTH_LONG).show();
+//                                    }
+//                                }
+//                            });
+//                        } else {
+//                            Toast.makeText(RegisterActivity.this, "Register Failed!", Toast.LENGTH_LONG).show();
+//                        }
+//                    }
+//                });
+        mAuth.createUserWithEmailAndPassword(uEmail, uPwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful())
+                {
+                    Toast.makeText(RegisterActivity.this,"You are successfully Registered", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                }
+                else
+                {
+                    Toast.makeText(RegisterActivity.this,"You are not Registered! Try again",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 

@@ -15,9 +15,20 @@ public class Categories {
 
     private String name;
 
+
+    private String code;
+
     public Categories(Integer id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Integer getId() {

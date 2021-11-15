@@ -13,6 +13,8 @@ import android.widget.Button;
 
 import com.example.myproject.R;
 import com.example.myproject.activity.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,14 +25,12 @@ public class AccountFragment extends Fragment {
 
     private View mView;
 
-    public static Boolean status = false;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView = status ? inflater.inflate(R.layout.fragment_profile, container, false)
-                : inflater.inflate(R.layout.fragment_account, container, false);
+
+        mView = inflater.inflate(R.layout.fragment_account, container, false);
 
         Button btn = mView.findViewById(R.id.btnJoinRadar);
 

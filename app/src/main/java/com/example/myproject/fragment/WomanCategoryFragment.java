@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.myproject.R;
-import com.example.myproject.Adapter.WomanRecyclerViewAdapter;
+import com.example.myproject.adapter.WomanRecyclerViewAdapter;
 
 
 public class WomanCategoryFragment extends Fragment {

@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.myproject.Adapter.MenRecyclerViewAdapter;
+import com.example.myproject.adapter.MenRecyclerViewAdapter;
 import com.example.myproject.R;
 
 

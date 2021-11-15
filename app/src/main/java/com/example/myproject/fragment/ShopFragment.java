@@ -15,7 +15,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.myproject.R;
-import com.example.myproject.Adapter.ShopFragmentAdapter;
+import com.example.myproject.adapter.ShopFragmentAdapter;
 import com.example.myproject.category.BagWomanCategory;
 import com.example.myproject.category.CoatMenCategory;
 import com.example.myproject.category.DenimMenCategory;

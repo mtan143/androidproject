@@ -23,12 +23,22 @@ public class Product implements Serializable {
 
     private Bitmap image;
 
+    private String categoryCode;
+
     public Product(Integer id, String name, String description, Integer price, Bitmap image) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.image = image;
+    }
+
+    public String getCategoryCode() {
+        return categoryCode;
+    }
+
+    public void setCategoryCode(String categoryCode) {
+        this.categoryCode = categoryCode;
     }
 
     public Integer getId() {

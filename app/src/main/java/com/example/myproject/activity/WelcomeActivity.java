@@ -31,9 +31,7 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (!PrefManager.getInstance(this).isFirstTimeLaunch()) {
-            Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
-            startActivity(intent);
-            finish();
+            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
         }
 
         textView = findViewById(R.id.slogan);

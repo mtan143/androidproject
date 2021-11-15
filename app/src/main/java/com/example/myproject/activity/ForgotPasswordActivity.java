@@ -8,6 +8,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myproject.R;
@@ -18,8 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ForgotPasswordActivity extends AppCompatActivity {
 
     private EditText email;
-    private Button forgotPassword;
     private FirebaseAuth mAuth;
+    TextView btnClose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +28,16 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_password);
 
         email = findViewById(R.id.email);
-        forgotPassword = findViewById(R.id.forgotPassword);
+        Button forgotPassword = findViewById(R.id.forgotPassword);
         mAuth = FirebaseAuth.getInstance();
+        btnClose = findViewById(R.id.btnClose);
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +67,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(ForgotPasswordActivity.this, "Check your email to reset password!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ForgotPasswordActivity.this, "Check your email to set new password!", Toast.LENGTH_LONG).show();
                     finish();
                 } else {
                     Toast.makeText(ForgotPasswordActivity.this, "Something wrong! Try again!", Toast.LENGTH_LONG).show();

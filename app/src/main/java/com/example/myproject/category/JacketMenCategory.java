@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.GridView;
 
-import com.example.myproject.Adapter.DuLieuGiaAdapter;
+import com.example.myproject.adapter.DuLieuGiaAdapter;
 import com.example.myproject.R;
 import com.example.myproject.giulieugia;
 
