@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
 
+
 public class Product implements Serializable {
 
     private Integer id;
@@ -21,11 +22,11 @@ public class Product implements Serializable {
 
     private Integer price;
 
-    private Bitmap image;
+    private String image;
 
     private String categoryCode;
 
-    public Product(Integer id, String name, String description, Integer price, Bitmap image) {
+    public Product(Integer id, String name, String description, Integer price, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -69,11 +70,11 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public Bitmap getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Bitmap image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

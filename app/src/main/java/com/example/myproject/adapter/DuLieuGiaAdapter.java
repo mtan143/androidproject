@@ -1,6 +1,7 @@
 package com.example.myproject.adapter;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,17 +10,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myproject.R;
-import com.example.myproject.giulieugia;
+import com.example.myproject.dulieugia;
+import com.example.myproject.model.Product;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 public class DuLieuGiaAdapter extends BaseAdapter {
 
     Context context;
     int layout ;
-    List<giulieugia> arraylist ;
+    List<Product> arraylist ;
 
-    public DuLieuGiaAdapter(Context context, int layout, List<giulieugia> arraylist) {
+    public DuLieuGiaAdapter(Context context, int layout, List<Product> arraylist) {
         this.context = context;
         this.layout = layout;
         this.arraylist = arraylist;
@@ -41,9 +45,10 @@ public class DuLieuGiaAdapter extends BaseAdapter {
     }
 
     private class ViewHolder{
-        TextView twsp;
-        TextView twgb;
-        ImageView imgAnh;
+        ImageView thumbnail;
+        TextView name;
+        TextView price;
+
     }
 
     @Override
@@ -55,18 +60,22 @@ public class DuLieuGiaAdapter extends BaseAdapter {
             view = inflater.inflate(layout , null);
             viewHolder = new ViewHolder();
 
-            viewHolder.twsp = (TextView) view.findViewById(R.id.TVsp);
-            viewHolder.twgb = (TextView) view.findViewById(R.id.TVgiaban);
-            viewHolder.imgAnh = (ImageView) view.findViewById(R.id.imgV);
+            viewHolder.thumbnail = view.findViewById(R.id.thumbnail);
+            viewHolder.name = view.findViewById(R.id.name);
+            viewHolder.price = view.findViewById(R.id.price);
 
             view.setTag(viewHolder);
-        }else {
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        viewHolder.twsp.setText(arraylist.get(i).TenSp);
-        viewHolder.twgb.setText(arraylist.get(i).Giaban);
-        viewHolder.imgAnh.setImageResource(arraylist.get(i).HinhAnh);
+        try {
+            viewHolder.thumbnail.setImageBitmap(BitmapFactory.decodeStream(new URL(arraylist.get(i).getImage()).openConnection().getInputStream()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        viewHolder.name.setText(arraylist.get(i).getName());
+        viewHolder.price.setText(arraylist.get(i).getPrice());
 
         return view;
     }

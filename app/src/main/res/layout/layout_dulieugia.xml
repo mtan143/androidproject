@@ -7,7 +7,7 @@
     android:gravity="center">
 
     <ImageView
-        android:id="@+id/imgV"
+        android:id="@+id/thumbnail"
         android:layout_width="@dimen/dp100"
         android:layout_height="@dimen/dp100"
         android:layout_marginTop="188dp"
@@ -15,11 +15,11 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        android:src="@drawable/jacket1"/>
+        tools:ignore="MissingConstraints"/>
+<!--        android:src="@drawable/jacket1"-->
 
     <TextView
-        android:id="@+id/TVsp"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp16"
@@ -29,11 +29,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgV"
+        app:layout_constraintTop_toBottomOf="@+id/thumbnail"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/TVgiaban"
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp52"
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgV"
+        app:layout_constraintTop_toBottomOf="@+id/name"
         tools:ignore="MissingConstraints" />
 
 
