@@ -35,6 +35,19 @@
     <string name="type_your_email">Type your email...</string>
     <string name="reset_password">Reset Password</string>
     <string name="log_out">Log Out</string>
+    <string name="done">DONE</string>
+    <string name="create">CREATE</string>
+    <string name="read">READ</string>
+    <string name="update">UPDATE</string>
+    <string name="delete">DELETE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="product">Product</string>
+    <string name="price">Price</string>
+    <string name="description">Description</string>
+    <string name="category">Category</string>
+    <string name="image">Image</string>
+    <string name="dockey">Dockey</string>
+    <string name="add">ADD</string>
 
     <string-array name="menshop">
         <item>Jacket</item>

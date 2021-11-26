@@ -1,7 +1,6 @@
 package com.example.myproject.adapter;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,21 +8,19 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.myproject.R;
-import com.example.myproject.dulieugia;
 import com.example.myproject.model.Product;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 
-public class DuLieuGiaAdapter extends BaseAdapter {
+public class ProductAdapter extends BaseAdapter {
 
     Context context;
     int layout ;
     List<Product> arraylist ;
 
-    public DuLieuGiaAdapter(Context context, int layout, List<Product> arraylist) {
+    public ProductAdapter(Context context, int layout, List<Product> arraylist) {
         this.context = context;
         this.layout = layout;
         this.arraylist = arraylist;
@@ -45,6 +42,7 @@ public class DuLieuGiaAdapter extends BaseAdapter {
     }
 
     private class ViewHolder{
+
         ImageView thumbnail;
         TextView name;
         TextView price;
@@ -70,10 +68,14 @@ public class DuLieuGiaAdapter extends BaseAdapter {
         }
 
         try {
-            viewHolder.thumbnail.setImageBitmap(BitmapFactory.decodeStream(new URL(arraylist.get(i).getImage()).openConnection().getInputStream()));
-        } catch (IOException e) {
-            e.printStackTrace();
+            Glide.with(context)
+                    .load(arraylist.get(i).getImgLink())
+                    .into(viewHolder.thumbnail);
         }
+        catch (Exception exception) {
+            System.out.println(exception);
+        }
+
         viewHolder.name.setText(arraylist.get(i).getName());
         viewHolder.price.setText(arraylist.get(i).getPrice());
 

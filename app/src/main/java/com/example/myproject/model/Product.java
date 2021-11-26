@@ -1,6 +1,5 @@
 package com.example.myproject.model;
 
-import android.app.DirectAction;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -20,18 +19,21 @@ public class Product implements Serializable {
 
     private String description;
 
-    private Integer price;
+    private String price;
 
-    private String image;
+    private String ImgLink;
 
     private String categoryCode;
 
-    public Product(Integer id, String name, String description, Integer price, String image) {
+    public Product(Integer id, String name, String description, String price, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.image = image;
+        this.ImgLink = image;
+    }
+
+    public Product() {
     }
 
     public String getCategoryCode() {
@@ -44,6 +46,10 @@ public class Product implements Serializable {
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -62,20 +68,20 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public Integer getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public String getImage() {
-        return image;
+    public String getImgLink() {
+        return ImgLink;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImgLink(String imgLink) {
+        this.ImgLink = imgLink;
     }
 
     public static Bitmap convertStringToBitmapFromAccess(Context context, String filename) {

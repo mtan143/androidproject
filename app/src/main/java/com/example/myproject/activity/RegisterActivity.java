@@ -108,31 +108,6 @@ public class RegisterActivity extends AppCompatActivity{
             return;
         }
 
-//        mAuth.createUserWithEmailAndPassword(uEmail, uPwd)
-//                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            FirebaseDatabase.getInstance().getReference("Users")
-//                                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
-//                                    .setValue(new User(uName, uEmail)).addOnCompleteListener(new OnCompleteListener<Void>() {
-//
-//                                @Override
-//                                public void onComplete(@NonNull Task<Void> task) {
-//                                    if (task.isSuccessful()) {
-//                                        Toast.makeText(RegisterActivity.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
-//                                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-//                                    } else {
-//                                        Toast.makeText(RegisterActivity.this, "Register Failed! Try again!", Toast.LENGTH_LONG).show();
-//                                    }
-//                                }
-//                            });
-//                        } else {
-//                            Toast.makeText(RegisterActivity.this, "Register Failed!", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                });
         mAuth.createUserWithEmailAndPassword(uEmail, uPwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {

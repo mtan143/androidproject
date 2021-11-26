@@ -1,4 +1,4 @@
-package com.example.myproject.activity;
+package com.example.myproject.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,11 +9,14 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.myproject.R;
+import com.example.myproject.activity.HomeActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminActivity extends AppCompatActivity {
 
     Button btnLogOut;
+    Button btnCreate;
+    Button btnRead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,10 @@ public class AdminActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin);
 
         btnLogOut = findViewById(R.id.logout);
+        btnCreate = findViewById(R.id.create);
+        btnRead = findViewById(R.id.read);
+
+
         btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,5 +36,20 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
             }
         });
+
+        btnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), CreateActivity.class));
+            }
+        });
+
+        btnRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ReadActivity.class));
+            }
+        });
+
     }
 }

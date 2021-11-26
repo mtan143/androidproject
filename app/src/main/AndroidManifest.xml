@@ -13,10 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
+            android:name=".admin.DeleteActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.UpdateActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.ReadActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.CreateActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.ForgotPasswordActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.AdminActivity"
+            android:name=".admin.AdminActivity"
             android:exported="true" />
         <activity
             android:name=".category.SwimwearWomanCategory"

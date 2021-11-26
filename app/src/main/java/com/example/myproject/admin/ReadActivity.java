@@ -1,4 +1,4 @@
-package com.example.myproject.category;
+package com.example.myproject.admin;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 
 import com.example.myproject.R;
@@ -19,27 +21,36 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class SneakersMenCategory extends AppCompatActivity {
+public class ReadActivity extends AppCompatActivity {
 
     GridView gridView;
     ArrayList<Product> arrayList;
     ProductAdapter adapter;
     FirebaseFirestore dbFirestore;
     ProgressDialog progressDialog;
+    Button done;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sneakers_men_category);
+        setContentView(R.layout.activity_read);
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Fetching data...");
         progressDialog.show();
 
-        gridView = findViewById(R.id.sneakers_men);
+        done = findViewById(R.id.done);
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        gridView = findViewById(R.id.all_product);
         dbFirestore = FirebaseFirestore.getInstance();
         arrayList = new ArrayList<>();
-
 
         adapter = new ProductAdapter(this,R.layout.layout_product_item, arrayList);
         gridView.setAdapter(adapter);
@@ -69,9 +80,7 @@ public class SneakersMenCategory extends AppCompatActivity {
                             if (dc.getType() == DocumentChange.Type.ADDED) {
 
                                 Product product = dc.getDocument().toObject(Product.class);
-
-                                if (product.getCategoryCode().equals("m_sneakers"))
-                                    arrayList.add(product);
+                                arrayList.add(product);
                             }
 
                             adapter.notifyDataSetChanged();

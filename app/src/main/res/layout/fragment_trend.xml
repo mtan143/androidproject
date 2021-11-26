@@ -68,7 +68,7 @@
                 tools:ignore="MissingConstraints" />
 
                 <Button
-                    android:id="@+id/btnMen"
+                    android:id="@+id/btnMen2"
                     android:layout_width="@dimen/dp291"
                     android:layout_height="@dimen/dp53"
                     android:layout_alignParentStart="true"
@@ -99,7 +99,7 @@
                     tools:ignore="MissingConstraints" />
 
                 <Button
-                    android:id="@+id/btnWomen"
+                    android:id="@+id/btnWomen1"
                     android:layout_width="@dimen/dp291"
                     android:layout_height="@dimen/dp53"
                     android:layout_alignParentStart="true"
@@ -131,7 +131,7 @@
                     tools:ignore="MissingConstraints" />
 
                 <Button
-                    android:id="@+id/btnHorse"
+                    android:id="@+id/btnWomen2"
                     android:layout_width="@dimen/dp291"
                     android:layout_height="@dimen/dp53"
                     android:layout_alignParentStart="true"

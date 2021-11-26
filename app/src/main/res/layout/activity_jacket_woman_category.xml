@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".category.JacketWomanCategory">
 
+    <GridView
+        android:id="@+id/jacket_woman"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
