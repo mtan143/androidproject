@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3769230769230769" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.3769230769230769" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.3769230769230769" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.3769230769230769" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.3769230769230769" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable/ic_baseline_shopping_bag_24.xml" value="0.3769230769230769" />
@@ -15,50 +16,53 @@
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable/ic_login_bg.xml" value="0.3769230769230769" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable/ic_register_bg.xml" value="0.3769230769230769" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.3769230769230769" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable/ic_voucher.xml" value="0.3769230769230769" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/drawable/shape_button.xml" value="0.3769230769230769" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/font/allerta.xml" value="0.39076923076923076" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/font/bungee.xml" value="0.39076923076923076" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_admin.xml" value="0.17831813576494426" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_create.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_forgot_password.xml" value="0.23369565217391305" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_home.xml" value="0.2694746376811594" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_jacket_men_category.xml" value="0.17831813576494426" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_jacket_woman_category.xml" value="0.23369565217391305" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_login.xml" value="0.17831813576494426" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_pants_men_category.xml" value="0.23369565217391305" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_pants_woman_category.xml" value="0.23369565217391305" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_register.xml" value="0.17831813576494426" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_search.xml" value="0.17831813576494426" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/activity_tshirt_men_category.xml" value="0.23369565217391305" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/category_item.xml" value="0.17831813576494426" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_account.xml" value="0.22" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_bag.xml" value="0.24818840579710144" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_men_category.xml" value="0.17831813576494426" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_search.xml" value="0.24818840579710144" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_shop.xml" value="0.23369565217391305" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_trend.xml" value="0.24818840579710144" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/fragment_wish_list.xml" value="0.24818840579710144" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/layout_dulieugia.xml" value="0.5" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/layout_giulieugia.xml" value="0.5" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/layout_product_item.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/login.xml" value="0.23324275362318841" />
+        <entry key="..\:/AndroidProject/androidproject/app/src/main/res/layout/test.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/androidproject/app/src/main/res/menu/bottom_navigation.xml" value="0.36666666666666664" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/button_shopnow.xml" value="0.19583333333333333" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/drawable/edit_text_rounded.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/ic_shop.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/searchview_bg.xml" value="0.19583333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/drawable/shape_button.xml" value="0.12395833333333334" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/drawable/shape_button_black.xml" value="0.19583333333333333" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_admin.xml" value="0.16666666666666666" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_bag_woman_category.xml" value="0.22" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_coat_men_category.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_create.xml" value="0.22" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_delete.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_denim_men_category.xml" value="0.1796875" />
+        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_admin.xml" value="0.22" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_forgot_password.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_home.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_jacket_men_category.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_jacket_woman_category.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_mencategory.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_pants_men_category.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_pants_woman_category.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_read.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_register.xml" value="0.165625" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_search.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_shirt_woman_category.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_shoes_woman_category.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_sneakers_men_category.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_swimwear_woman_category.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_tshirt_men_category.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_tshirt_woman_category.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_update.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/activity_welcome2.xml" value="0.17552083333333332" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/btn_shopnow.xml" value="0.12" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_account.xml" value="0.1796875" />
@@ -70,12 +74,8 @@
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_shop.xml" value="0.3333333333333333" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_trend.xml" value="0.16666666666666666" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/fragment_wish_list.xml" value="0.5" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/layout_dulieugia.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/layout/layout_product_item.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/layout/product_item.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/menu-v26/done_menu.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/menu/bottom_navigation.xml" value="0.1796875" />
-        <entry key="..\:/Download/MyProject/app/src/main/res/menu/done_menu.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/menu/main_manu.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/menu/main_menu.xml" value="0.1796875" />
         <entry key="..\:/Download/MyProject/app/src/main/res/menu/search_menu.xml" value="0.1796875" />

@@ -72,4 +72,10 @@
     <dimen name="dp64">64dp</dimen>
     <dimen name="dp52">52dp</dimen>
     <dimen name="dp500">500dp</dimen>
+    <dimen name="dp300">300dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+    <dimen name="dp14">14dp</dimen>
+    <dimen name="dp0">0dp</dimen>
+    <dimen name="dp125">125dp</dimen>
+    <dimen name="dp10">10dp</dimen>
 </resources>
