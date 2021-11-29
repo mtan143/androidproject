@@ -4,11 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".category.CoatMenCategory">
+    android:fitsSystemWindows="true"
+    tools:context=".category.CoatMenCategory"
+    android:background="#E7E7E7">
 
     <GridView
         android:id="@+id/coat_men"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="2" />
+        android:layout_height="@dimen/dp672"
+        android:numColumns="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/titleCategory2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp24"
+        app:layout_constraintBottom_toTopOf="@+id/coat_men"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btnDone2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/done"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/coat_men"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/titleCategory2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myproject.adapter.ProductAdapter;
@@ -31,6 +33,8 @@ public class JacketMenCategory extends AppCompatActivity {
     ProductAdapter adapter;
     FirebaseFirestore dbFirestore;
     ProgressDialog progressDialog;
+    TextView title;
+    TextView btnDone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,18 @@ public class JacketMenCategory extends AppCompatActivity {
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Fetching data...");
         progressDialog.show();
+
+        title = findViewById(R.id.titleCategory1);
+        title.setText("JACKET");
+
+        btnDone = findViewById(R.id.btnDone1);
+        btnDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
         gridView = findViewById(R.id.jacket_men);
         dbFirestore = FirebaseFirestore.getInstance();
