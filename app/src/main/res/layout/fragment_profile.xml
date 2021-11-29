@@ -43,10 +43,10 @@
             android:layout_marginLeft="@dimen/dp13"
             android:layout_toRightOf="@id/avatar_profile"
             android:fontFamily="@font/baloo"
+            android:includeFontPadding="false"
             android:text="minhtan123@gmail.com"
             android:textColor="#757575"
-            android:textSize="@dimen/dp14"
-            android:includeFontPadding="false"/>
+            android:textSize="@dimen/dp14" />
 
 
     </RelativeLayout>

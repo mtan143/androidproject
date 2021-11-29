@@ -78,4 +78,12 @@
     <dimen name="dp0">0dp</dimen>
     <dimen name="dp125">125dp</dimen>
     <dimen name="dp10">10dp</dimen>
+    <dimen name="dp159">159dp</dimen>
+    <dimen name="dp161">161dp</dimen>
+    <dimen name="sp17">17sp</dimen>
+    <dimen name="sp12">12sp</dimen>
+    <dimen name="sp10">10sp</dimen>
+    <dimen name="dp129">129dp</dimen>
+    <dimen name="dp95">95dp</dimen>
+    <dimen name="dp28">28dp</dimen>
 </resources>
