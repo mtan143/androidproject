@@ -13,6 +13,7 @@
         android:layout_marginTop="@dimen/dp28"
         android:includeFontPadding="false"
         android:src="@drawable/jacket1"
+        android:adjustViewBounds="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"

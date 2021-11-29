@@ -15,7 +15,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.myproject.R;
-import com.example.myproject.adapter.ShopFragmentAdapter;
 import com.example.myproject.category.BagWomanCategory;
 import com.example.myproject.category.CoatMenCategory;
 import com.example.myproject.category.DenimMenCategory;
@@ -41,7 +40,6 @@ public class ShopFragment extends Fragment {
     private View mView;
     private TabLayout tabLayout;
     private ViewPager2 viewPager;
-    private ShopFragmentAdapter adapter;
 
     @Nullable
     @Override
