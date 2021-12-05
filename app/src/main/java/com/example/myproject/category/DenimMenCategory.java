@@ -4,15 +4,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.example.myproject.R;
 import com.example.myproject.adapter.ProductAdapter;
 import com.example.myproject.model.Product;
+import com.example.myproject.product.ProductDetailActivity;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -61,6 +64,7 @@ public class DenimMenCategory extends AppCompatActivity {
         gridView.setAdapter(adapter);
 
         retrieveData();
+        itemClick();
     }
 
     /**
@@ -86,8 +90,10 @@ public class DenimMenCategory extends AppCompatActivity {
 
                                 Product product = dc.getDocument().toObject(Product.class);
 
-                                if (product.getCategoryCode().equals("m_denim"))
+                                if (product.getCategoryCode().equals("m_denim")) {
+                                    product.setId(dc.getDocument().getId());
                                     arrayList.add(product);
+                                }
                             }
 
                             adapter.notifyDataSetChanged();
@@ -95,5 +101,19 @@ public class DenimMenCategory extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    /**
+     * Handle item click
+     */
+    public void itemClick () {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getApplicationContext(), ProductDetailActivity.class);
+                intent.putExtra("product", arrayList.get(i));
+                startActivity(intent);
+            }
+        });
     }
 }

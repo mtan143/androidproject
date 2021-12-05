@@ -7,18 +7,21 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.example.myproject.R;
 import com.example.myproject.adapter.ProductAdapter;
 import com.example.myproject.model.Product;
+import com.example.myproject.product.ProductDetailActivity;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -69,6 +72,8 @@ public class BagWomanCategory extends AppCompatActivity {
         gridView.setAdapter(adapter);
 
         retrieveData();
+
+        itemClick();
     }
 
     /**
@@ -94,8 +99,10 @@ public class BagWomanCategory extends AppCompatActivity {
 
                                 Product product = dc.getDocument().toObject(Product.class);
 
-                                if (product.getCategoryCode().equals("w_bag"))
+                                if (product.getCategoryCode().equals("w_bag")) {
+                                    product.setId(dc.getDocument().getId());
                                     arrayList.add(product);
+                                }
                             }
 
                             adapter.notifyDataSetChanged();
@@ -121,5 +128,19 @@ public class BagWomanCategory extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    /**
+     * Handle item click
+     */
+    public void itemClick () {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getApplicationContext(), ProductDetailActivity.class);
+                intent.putExtra("product", arrayList.get(i));
+                startActivity(intent);
+            }
+        });
     }
 }

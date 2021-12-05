@@ -42,7 +42,6 @@
     <string name="delete">DELETE</string>
     <string name="cancel">CANCEL</string>
     <string name="product">Product</string>
-    <string name="description">Description</string>
     <string name="category">Category</string>
     <string name="image">Image</string>
     <string name="dockey">Dockey</string>
@@ -50,6 +49,13 @@
     <string name="radar">RADAR</string>
     <string name="add_to_cart">ADD TO CART</string>
     <string name="price">Price</string>
+    <string name="present">It\'s not only writers who can benefit from this free online tool. If you\'re a programmer who\'s working on a project where blocks of text are needed, this tool can be a great way to get that. It\'s a good way to test your programming and that the tool being created is working well. Above are a few examples of how the random paragraph generator can be beneficial. The best way to see if this random paragraph picker will be useful for your intended purposes is to give it a try. Generate a number of paragraphs to see if they are beneficial to your current project. If you do find this paragraph tool useful, please do us a favor and let us know how you\'re using it. It\'s greatly beneficial for us to know the different ways this tool is being used so we can improve it with updates. This is especially true since there are times when the generators we create get used in completely unanticipated ways from when we initially created them. If you have the time, please send us a quick note on what you\'d like to see changed or added to make it better in the future.</string>
+    <string name="description">Description</string>
+    <string name="gia_ban">Gia Ban</string>
+    <string name="ten_san_pham">Ten San Pham</string>
+    <string name="total_price">TOTAL PRICE:</string>
+    <string name="payment">PAYMENT</string>
+    <string name="remove_all">REMOVE ALL</string>
 
     <string-array name="menshop">
         <item>Jacket</item>

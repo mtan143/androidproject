@@ -37,7 +37,6 @@ public class HomeActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setTitle("RADAR");
-
         navigation = findViewById(R.id.bottom_navigation);
         viewPager2 = findViewById(R.id.view_pager2);
 
@@ -75,50 +74,32 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-//        loadFragment(new TrendFragment());
-
         navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                Fragment fragment;
-
                 switch (item.getItemId()) {
                     case R.id.home:
                         getSupportActionBar().setTitle("RADAR");
                         viewPager2.setCurrentItem(0);
-//                        fragment = new TrendFragment();
-//                        loadFragment(fragment);
                         return true;
                     case R.id.search:
                         getSupportActionBar().setTitle("SHOP");
                         viewPager2.setCurrentItem(1);
-//                        fragment = new TrendFragment();
-//                        loadFragment(fragment);
                         return true;
                     case R.id.favourite:
                         getSupportActionBar().setTitle("FAVOURITE");
                         viewPager2.setCurrentItem(2);
-//                        fragment = new TrendFragment();
-//                        loadFragment(fragment);
                         return true;
                     case R.id.shoppingbag:
                         getSupportActionBar().setTitle("SHOPPING BAG");
                         viewPager2.setCurrentItem(3);
-//                        fragment = new TrendFragment();
-//                        loadFragment(fragment);
                         return true;
                     case R.id.account:
                         getSupportActionBar().setTitle("ACCOUNT");
                         viewPager2.setCurrentItem(4);
-//                        fragment = new TrendFragment();
-//                        loadFragment(fragment);
                         return true;
-//                    case R.id.btnMen1:
-//                        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//                        viewPager2.setCurrentItem(5);
-//                        return true;
                 }
 
                 return false;

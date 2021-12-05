@@ -13,24 +13,30 @@ import java.io.Serializable;
 
 public class Product implements Serializable {
 
-    private Integer id;
+    private String id;
 
     private String name;
 
     private String description;
 
-    private String price;
+    private int price;
+
+    private boolean like;
+
+    private boolean cart;
 
     private String ImgLink;
 
     private String categoryCode;
 
-    public Product(Integer id, String name, String description, String price, String image) {
+    public Product(String id, String name, String description, int price, String image, boolean like, boolean cart) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.ImgLink = image;
+        this.like = like;
+        this.cart = cart;
     }
 
     public Product() {
@@ -44,11 +50,11 @@ public class Product implements Serializable {
         this.categoryCode = categoryCode;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -68,11 +74,11 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -82,6 +88,22 @@ public class Product implements Serializable {
 
     public void setImgLink(String imgLink) {
         this.ImgLink = imgLink;
+    }
+
+    public boolean isLike() {
+        return like;
+    }
+
+    public void setLike(boolean like) {
+        this.like = like;
+    }
+
+    public boolean isCart() {
+        return cart;
+    }
+
+    public void setCart(boolean cart) {
+        this.cart = cart;
     }
 
     public static Bitmap convertStringToBitmapFromAccess(Context context, String filename) {

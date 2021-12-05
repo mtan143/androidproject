@@ -1,44 +1,48 @@
 package com.example.myproject.fragment;
 
-import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.myproject.R;
+import com.example.myproject.adapter.MyViewpager2Adapter;
 import com.example.myproject.adapter.ProductAdapter;
 import com.example.myproject.model.Product;
 import com.example.myproject.product.ProductDetailActivity;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class BagFragment extends Fragment {
+public class FavFragment extends Fragment {
 
     private View mView;
     GridView gridView;
     ArrayList<Product> arrayList;
     ProductAdapter adapter;
     FirebaseFirestore dbFirestore;
-    TextView tv5, tv6;
-    Button removeAll, payBtn;
+    TextView tv3, tv4;
 
-    public BagFragment() {
+    public FavFragment() {
+        // Required empty public constructor
     }
+
 
     @Override
     public void onResume() {
@@ -51,47 +55,22 @@ public class BagFragment extends Fragment {
 
         retrieveData();
         itemClick();
-        removeAllButton();
 
     }
 
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        mView = inflater.inflate(R.layout.fragment_bag, container, false);
-        gridView = mView.findViewById(R.id.cart);
-        tv5 = mView.findViewById(R.id.textView5);
-        tv6 = mView.findViewById(R.id.textView6);
-        removeAll = mView.findViewById(R.id.removeAll);
-        payBtn = mView.findViewById(R.id.payBtn);
+
+        mView = inflater.inflate(R.layout.fragment_fav, container, false);
+
+        gridView = mView.findViewById(R.id.wishlist);
+        tv3 = mView.findViewById(R.id.textView3);
+        tv4 = mView.findViewById(R.id.textView4);
 
         return mView;
-    }
-
-    /**
-     * Remove all on click
-     */
-    public void removeAllButton() {
-        removeAll.setOnClickListener(view -> {
-            for (Product prd : arrayList) {
-                dbFirestore.collection("products").document(prd.getId())
-                        .update("cart", false)
-                        .addOnSuccessListener(unused -> {
-                            Toast.makeText(getContext(), "Remove Successfully!", Toast.LENGTH_LONG).show();
-                        })
-                        .addOnFailureListener(e -> {
-                            Toast.makeText(getContext(), "Failed! Try again!", Toast.LENGTH_LONG).show();
-                        });
-            }
-            arrayList.clear();
-            retrieveData();
-            adapter = new ProductAdapter(getContext(),R.layout.layout_product_item, arrayList);
-            gridView.setAdapter(adapter);
-
-        });
     }
 
     /**
@@ -107,20 +86,21 @@ public class BagFragment extends Fragment {
 
                             Product product = dc.getDocument().toObject(Product.class);
 
-                            if (product.isCart()) {
-                                product.setId(dc.getDocument().getId());
-                                arrayList.add(product);
-
+                            if (product.isLike()) {
+                                if (!arrayList.contains(product)) {
+                                    product.setId(dc.getDocument().getId());
+                                    arrayList.add(product);
+                                }
                             }
                         }
                         adapter.notifyDataSetChanged();
                     }
                     if (arrayList.isEmpty()) {
-                        tv6.setText(R.string.bag1);
-                        tv5.setText(R.string.bag2);
+                        tv4.setText(R.string.wishlistemty1);
+                        tv3.setText(R.string.wishlistemty2);
                     } else {
-                        tv6.setText("");
-                        tv5.setText("");
+                        tv4.setText("");
+                        tv3.setText("");
                     }
                 });
     }

@@ -88,4 +88,5 @@
     <dimen name="dp28">28dp</dimen>
     <dimen name="dp672">672dp</dimen>
     <dimen name="dp15">15dp</dimen>
+    <dimen name="dp680">680dp</dimen>
 </resources>

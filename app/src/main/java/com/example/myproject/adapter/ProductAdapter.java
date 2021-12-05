@@ -1,5 +1,6 @@
 package com.example.myproject.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import com.bumptech.glide.Glide;
 import com.example.myproject.R;
 import com.example.myproject.model.Product;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends BaseAdapter {
@@ -41,20 +44,14 @@ public class ProductAdapter extends BaseAdapter {
         return 0;
     }
 
-    private class ViewHolder{
-
-        ImageView thumbnail;
-        TextView name;
-        TextView price;
-
-    }
-
+    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
         ViewHolder viewHolder;
         if (view == null){
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(layout , null);
             viewHolder = new ViewHolder();
 
@@ -77,8 +74,16 @@ public class ProductAdapter extends BaseAdapter {
         }
 
         viewHolder.name.setText(arraylist.get(i).getName());
-        viewHolder.price.setText(arraylist.get(i).getPrice());
+        viewHolder.price.setText("AU$ " + new DecimalFormat("#,###").format(arraylist.get(i).getPrice()));
 
         return view;
+    }
+
+    private class ViewHolder{
+
+        ImageView thumbnail;
+        TextView name;
+        TextView price;
+
     }
 }

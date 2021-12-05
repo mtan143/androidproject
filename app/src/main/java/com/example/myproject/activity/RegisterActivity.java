@@ -18,11 +18,19 @@ import com.example.myproject.R;
 import com.example.myproject.fragment.AccountFragment;
 import com.example.myproject.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity{
@@ -32,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity{
     EditText password;
     Button btnRegister;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore firestore;
 
 
     @Override
@@ -48,6 +57,7 @@ public class RegisterActivity extends AppCompatActivity{
         btnRegister = findViewById(R.id.btnRegister);
 
         mAuth = FirebaseAuth.getInstance();
+        firestore = FirebaseFirestore.getInstance();
 
         //switch to login slide
         loginSlide.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +123,24 @@ public class RegisterActivity extends AppCompatActivity{
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
+                    Map<String, Object> user = new HashMap<>();
+                    user.put("username", uName);
+                    user.put("email", uEmail);
+                    user.put("password", uPwd);
+
+                    firestore.collection("users")
+                            .add(user)
+                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                }
+                            });
+
                     Toast.makeText(RegisterActivity.this,"You are successfully Registered", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 }

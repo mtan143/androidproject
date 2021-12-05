@@ -45,86 +45,129 @@
         app:drawableStartCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
         tools:ignore="SpUsage" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="@dimen/dp200"
-        android:layout_height="@dimen/dp50"
-        android:background="@drawable/shape_button_black"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/add_to_cart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="665dp" />
-
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp680"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAddToCart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/actionMenuView"
-        app:srcCompat="@drawable/model"
-        tools:ignore="MissingConstraints,NotSibling"/>
+        app:layout_constraintTop_toBottomOf="@id/actionMenuView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
 
-    <ImageView
-        android:id="@+id/heartLove"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="224dp"
-        android:src="@drawable/ic_heart"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/image"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="@+id/image" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/nameDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/bungee"
-        android:includeFontPadding="false"
-        android:text="Ten San Pham"
-        android:textColor="@color/black"
-        android:textSize="@dimen/dp24"
-        app:layout_constraintEnd_toEndOf="@+id/image"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="@+id/image"
-        app:layout_constraintTop_toBottomOf="@+id/image" />
+            <ImageView
+                android:id="@+id/picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/model"
+                tools:ignore="MissingConstraints,NotSibling" />
 
-    <TextView
-        android:id="@+id/priceDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
-        android:fontFamily="@font/baloo"
-        android:includeFontPadding="false"
-        android:text="Gia Ban"
-        android:textColor="@color/black"
-        android:textSize="@dimen/dp20"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/image"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="@+id/image" />
+            <ImageView
+                android:id="@+id/heartLove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/not_fav"
+                app:layout_constraintBottom_toBottomOf="@id/picture"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp20"
+                app:tint="@color/black" />
 
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
-        android:fontFamily="@font/baloo"
-        android:includeFontPadding="false"
-        android:text="Description"
-        android:textColor="@color/black"
-        android:textSize="@dimen/dp20"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/image"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="@+id/image" />
 
+            <TextView
+                android:id="@+id/nameDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="112dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="116dp"
+                android:fontFamily="@font/bungee"
+                android:textAlignment="center"
+                android:includeFontPadding="false"
+                android:text="@string/ten_san_pham"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/picture"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/priceDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="168dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="173dp"
+                android:fontFamily="@font/baloo"
+                android:includeFontPadding="false"
+                android:text="@string/gia_ban"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="148dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="155dp"
+                android:fontFamily="@font/baloo"
+                android:includeFontPadding="false"
+                android:text="@string/description"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameDetail"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/present"
+                android:layout_width="381dp"
+                android:layout_height="803dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="@font/baloo"
+                android:includeFontPadding="false"
+                android:text="@string/present"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/priceDetail"
+                tools:ignore="SpUsage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="@dimen/dp200"
+        android:layout_height="@dimen/dp50"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_button_black"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/add_to_cart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
