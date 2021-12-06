@@ -16,11 +16,6 @@ import com.example.myproject.activity.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AccountFragment#} factory method to
- * create an instance of this fragment.
- */
 public class AccountFragment extends Fragment {
 
     private View mView;
@@ -34,15 +29,12 @@ public class AccountFragment extends Fragment {
 
         Button btn = mView.findViewById(R.id.btnJoinRadar);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btn.setOnClickListener(view -> {
 
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
 
-                startActivity(intent);
+            startActivity(intent);
 
-            }
         });
 
         return mView;

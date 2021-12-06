@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    style="@style/CardView.Light"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginStart="@dimen/dp8"
+    android:layout_marginEnd="@dimen/dp8">
+
+    <ImageView
+        android:id="@+id/order_image"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp100"
+        android:src="@drawable/highlight1"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/order_name"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp13"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginStart="@dimen/dp124"
+        android:fontFamily="@font/baloo"
+        android:text="@string/jacket"
+        android:textColor="@color/black"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/order_price"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp13"
+        android:layout_marginTop="@dimen/dp60"
+        android:layout_marginStart="@dimen/dp124"
+        android:fontFamily="@font/baloo"
+        android:text="@string/price_upper"
+        android:textColor="@color/black"
+        tools:ignore="SpUsage" />
+
+
+</androidx.cardview.widget.CardView>

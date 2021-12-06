@@ -38,6 +38,9 @@ public class RegisterActivity extends AppCompatActivity{
     EditText username;
     EditText email;
     EditText password;
+    EditText name;
+    EditText phone;
+    EditText address;
     Button btnRegister;
     private FirebaseAuth mAuth;
     private FirebaseFirestore firestore;
@@ -53,6 +56,9 @@ public class RegisterActivity extends AppCompatActivity{
         //register process
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
+//        name = findViewById(R.id.);
+//        phone = findViewById(R.id);
+//        address = findViewById(R.id.);
         password = findViewById(R.id.password);
         btnRegister = findViewById(R.id.btnRegister);
 
@@ -87,6 +93,9 @@ public class RegisterActivity extends AppCompatActivity{
         String uName = username.getText().toString().trim();
         String uEmail = email.getText().toString().trim();
         String uPwd = password.getText().toString().trim();
+//        String yourName = name.getText().toString().trim();
+//        String yourPhone = name.getText().toString().trim();
+//        String yourAddress = name.getText().toString().trim();
 
         if (uName.isEmpty()) {
             username.setError("Username is required!");
@@ -129,17 +138,7 @@ public class RegisterActivity extends AppCompatActivity{
                     user.put("password", uPwd);
 
                     firestore.collection("users")
-                            .add(user)
-                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                }
-                            });
+                            .add(user);
 
                     Toast.makeText(RegisterActivity.this,"You are successfully Registered", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));

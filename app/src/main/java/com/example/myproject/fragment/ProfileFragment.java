@@ -37,6 +37,9 @@ public class ProfileFragment extends Fragment {
     Button logout;
     TextView email;
     TextView username;
+    TextView name;
+    TextView phone;
+    TextView address;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,38 +49,39 @@ public class ProfileFragment extends Fragment {
 
         username = view.findViewById(R.id.username);
         email = view.findViewById(R.id.email);
+        name = view.findViewById(R.id.profile_name_value);
+        phone = view.findViewById(R.id.profile_phone_value);
+        address = view.findViewById(R.id.profile_address_value);
         logout = view.findViewById(R.id.logout);
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(getActivity(), "Log Out Success!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getActivity(), HomeActivity.class));
-            }
+        logout.setOnClickListener(view1 -> {
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(getActivity(), "Log Out Success!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getActivity(), HomeActivity.class));
         });
 
         email.setText(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail());
 
         FirebaseFirestore.getInstance()
                 .collection("users")
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                .addSnapshotListener((value, error) -> {
 
-                        if (error != null) {
-                            Log.e("Firestore Error", error.getMessage());
-                            return;
-                        }
+                    if (error != null) {
+                        Log.e("Firestore Error", error.getMessage());
+                        return;
+                    }
 
-                        for (DocumentChange dc : value.getDocumentChanges()) {
+                    for (DocumentChange dc : value.getDocumentChanges()) {
 
-                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                        if (dc.getType() == DocumentChange.Type.ADDED) {
 
-                                User user = dc.getDocument().toObject(User.class);
+                            User user = dc.getDocument().toObject(User.class);
 
-                                if (user.getEmail().equals(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail()))
-                                    username.setText(user.getUsername());
+                            if (user.getEmail().equals(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail())) {
+                                username.setText(user.getUsername());
+                                name.setText(user.getName());
+                                phone.setText(user.getPhone());
+                                address.setText(user.getAddress());
                             }
                         }
                     }

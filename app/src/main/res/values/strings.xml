@@ -56,6 +56,20 @@
     <string name="total_price">TOTAL PRICE:</string>
     <string name="payment">PAYMENT</string>
     <string name="remove_all">REMOVE ALL</string>
+    <string name="payment_confirm">PAYMENT CONFIRM</string>
+    <string name="payment_method">PAYMENT METHOD:</string>
+    <string name="cash_on_delivery">CASH ON DELIVERY</string>
+    <string name="product_upper">PRODUCT:</string>
+    <string name="price_upper">PRICE</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="close">CLOSE</string>
+    <string name="name">NAME</string>
+    <string name="address">ADDRESS</string>
+    <string name="phone_number">PHONE NUMBER</string>
+    <string name="order">ORDER</string>
+    <string name="voucher">Voucher</string>
+    <string name="edit">EDIT</string>
+    <string name="phone">PHONE</string>
 
     <string-array name="menshop">
         <item>Jacket</item>

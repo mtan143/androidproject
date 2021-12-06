@@ -17,11 +17,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myproject.R;
+import com.example.myproject.activity.LoginActivity;
+import com.example.myproject.activity.PaymentActivity;
 import com.example.myproject.adapter.ProductAdapter;
 import com.example.myproject.model.Product;
 import com.example.myproject.product.ProductDetailActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -52,6 +55,7 @@ public class BagFragment extends Fragment {
         retrieveData();
         itemClick();
         removeAllButton();
+        setPayBtn();
 
     }
 
@@ -90,7 +94,24 @@ public class BagFragment extends Fragment {
             retrieveData();
             adapter = new ProductAdapter(getContext(),R.layout.layout_product_item, arrayList);
             gridView.setAdapter(adapter);
+        });
+    }
 
+    /**
+     * pay button
+     */
+    public void setPayBtn () {
+        payBtn.setOnClickListener(view -> {
+            if (!arrayList.isEmpty()) {
+                if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+                    Toast.makeText(getActivity(), "You need to login first!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                } else {
+                    Intent intent = new Intent(getActivity(), PaymentActivity.class);
+                    intent.putExtra("order", arrayList);
+                    startActivity(intent);
+                }
+            }
         });
     }
 
