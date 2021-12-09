@@ -58,6 +58,7 @@
         android:layout_marginTop="-100dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/order"
             android:layout_width="@dimen/dp0"
             android:layout_height="@dimen/dp125"
             android:layout_margin="@dimen/dp10"
@@ -93,6 +94,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/edit"
             android:layout_width="@dimen/dp0"
             android:layout_height="@dimen/dp125"
             android:layout_weight="1"
@@ -114,7 +116,7 @@
                     tools:ignore="UseAppTint" />
 
                 <TextView
-                    android:id="@+id/voucher"
+                    android:id="@+id/edit_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"

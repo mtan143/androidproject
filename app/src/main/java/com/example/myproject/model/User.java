@@ -1,8 +1,8 @@
 package com.example.myproject.model;
 
-import java.util.List;
+import java.io.Serializable;
 
-public class User {
+public class User implements Serializable {
 
     private String id;
     private String username;

@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
+            android:name=".activity.OrderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.EditActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.PaymentActivity"
             android:exported="true" />
         <activity

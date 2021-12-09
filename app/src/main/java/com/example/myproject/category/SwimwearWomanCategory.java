@@ -1,8 +1,8 @@
 package com.example.myproject.category;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,10 +17,7 @@ import com.example.myproject.adapter.ProductAdapter;
 import com.example.myproject.model.Product;
 import com.example.myproject.product.ProductDetailActivity;
 import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -34,6 +31,7 @@ public class SwimwearWomanCategory extends AppCompatActivity {
     TextView title;
     TextView btnDone;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +45,7 @@ public class SwimwearWomanCategory extends AppCompatActivity {
         title.setText("SWIMWEAR");
 
         btnDone = findViewById(R.id.btnDone10);
-        btnDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        btnDone.setOnClickListener(view -> finish());
 
         gridView = findViewById(R.id.swimwear_woman);
         dbFirestore = FirebaseFirestore.getInstance();
@@ -71,33 +64,30 @@ public class SwimwearWomanCategory extends AppCompatActivity {
      */
     public void retrieveData () {
         dbFirestore.collection("products")
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                .addSnapshotListener((value, error) -> {
 
-                        if (error != null) {
-                            if (progressDialog.isShowing()) {
-                                progressDialog.dismiss();
+                    if (error != null) {
+                        if (progressDialog.isShowing()) {
+                            progressDialog.dismiss();
+                        }
+                        Log.e("Firestore Error", error.getMessage());
+                        return;
+                    }
+
+                    for (DocumentChange dc : value.getDocumentChanges()) {
+
+                        if (dc.getType() == DocumentChange.Type.ADDED) {
+
+                            Product product = dc.getDocument().toObject(Product.class);
+
+                            if (product.getCategoryCode().equals("w_swimwear")) {
+                                product.setId(dc.getDocument().getId());
+                                arrayList.add(product);
                             }
-                            Log.e("Firestore Error", error.getMessage());
-                            return;
                         }
 
-                        for (DocumentChange dc : value.getDocumentChanges()) {
-
-                            if (dc.getType() == DocumentChange.Type.ADDED) {
-
-                                Product product = dc.getDocument().toObject(Product.class);
-
-                                if (product.getCategoryCode().equals("w_swimwear")) {
-                                    product.setId(dc.getDocument().getId());
-                                    arrayList.add(product);
-                                }
-                            }
-
-                            adapter.notifyDataSetChanged();
-                            if (progressDialog.isShowing()) progressDialog.dismiss();
-                        }
+                        adapter.notifyDataSetChanged();
+                        if (progressDialog.isShowing()) progressDialog.dismiss();
                     }
                 });
     }

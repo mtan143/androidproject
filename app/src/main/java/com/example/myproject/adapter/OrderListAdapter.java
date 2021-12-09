@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.myproject.R;
+import com.example.myproject.model.Order;
 import com.example.myproject.model.Product;
 import com.example.myproject.model.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,29 +21,28 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-public class ProductAdapter extends BaseAdapter {
+public class OrderListAdapter extends BaseAdapter {
 
     Context context;
-    int layout ;
-    List<Product> arraylist ;
+    int layout;
+    ArrayList<Order> arrayList;
 
-    public ProductAdapter(Context context, int layout, List<Product> arraylist) {
+    public OrderListAdapter(Context context, int layout, ArrayList<Order> arrayList) {
         this.context = context;
         this.layout = layout;
-        this.arraylist = arraylist;
+        this.arrayList = arrayList;
     }
 
     @Override
     public int getCount() {
-        return arraylist.size();
+        return arrayList.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return arrayList.get(i);
     }
 
     @Override
@@ -54,42 +54,35 @@ public class ProductAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        ViewHolder viewHolder;
+        OrderListAdapter.ViewHolder viewHolder;
         if (view == null){
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(layout , null);
-            viewHolder = new ViewHolder();
+            viewHolder = new OrderListAdapter.ViewHolder();
 
-            viewHolder.thumbnail = view.findViewById(R.id.thumbnail);
-            viewHolder.name = view.findViewById(R.id.name);
-            viewHolder.price = view.findViewById(R.id.price);
+            viewHolder.id = view.findViewById(R.id.order_id_value);
+            viewHolder.totalProduct = view.findViewById(R.id.total_product_value);
+            viewHolder.totalPrice = view.findViewById(R.id.total_price_value);
+            viewHolder.status = view.findViewById(R.id.status);
 
             view.setTag(viewHolder);
         } else {
-            viewHolder = (ViewHolder) view.getTag();
+            viewHolder = (OrderListAdapter.ViewHolder) view.getTag();
         }
-
-        try {
-            Glide.with(context)
-                    .load(arraylist.get(i).getImgLink())
-                    .into(viewHolder.thumbnail);
-        }
-        catch (Exception exception) {
-            System.out.println(exception);
-        }
-
-        viewHolder.name.setText(arraylist.get(i).getName());
-        viewHolder.price.setText("AU$ " + new DecimalFormat("#,###").format(arraylist.get(i).getPrice()));
-
+        viewHolder.id.setText(arrayList.get(i).getId());
+        viewHolder.totalProduct.setText(String.valueOf(arrayList.get(i).getProducts().size()));
+        viewHolder.totalPrice.setText("AU$ " + new DecimalFormat("#,###").format(arrayList.get(i).getTotalPrice()));
+        viewHolder.status.setText(arrayList.get(i).getStatus());
         return view;
     }
 
     private class ViewHolder{
 
-        ImageView thumbnail;
-        TextView name;
-        TextView price;
+        TextView id;
+        TextView totalProduct;
+        TextView totalPrice;
+        TextView status;
 
     }
 

@@ -56,9 +56,9 @@ public class RegisterActivity extends AppCompatActivity{
         //register process
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
-//        name = findViewById(R.id.);
-//        phone = findViewById(R.id);
-//        address = findViewById(R.id.);
+        name = findViewById(R.id.nameuser);
+        phone = findViewById(R.id.phone);
+        address = findViewById(R.id.address);
         password = findViewById(R.id.password);
         btnRegister = findViewById(R.id.btnRegister);
 
@@ -66,20 +66,10 @@ public class RegisterActivity extends AppCompatActivity{
         firestore = FirebaseFirestore.getInstance();
 
         //switch to login slide
-        loginSlide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        loginSlide.setOnClickListener(view -> onBackPressed());
 
         //register
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                registerUser();
-            }
-        });
+        btnRegister.setOnClickListener(view -> registerUser());
     }
 
     @Override
@@ -93,9 +83,9 @@ public class RegisterActivity extends AppCompatActivity{
         String uName = username.getText().toString().trim();
         String uEmail = email.getText().toString().trim();
         String uPwd = password.getText().toString().trim();
-//        String yourName = name.getText().toString().trim();
-//        String yourPhone = name.getText().toString().trim();
-//        String yourAddress = name.getText().toString().trim();
+        String yourName = name.getText().toString().trim();
+        String yourPhone = phone.getText().toString().trim();
+        String yourAddress = address.getText().toString().trim();
 
         if (uName.isEmpty()) {
             username.setError("Username is required!");
@@ -126,6 +116,26 @@ public class RegisterActivity extends AppCompatActivity{
             email.requestFocus();
             return;
         }
+        if (yourName.isEmpty()) {
+            name.setError("Name invalid!");
+            name.requestFocus();
+            return;
+        }
+        if (yourPhone.isEmpty()) {
+            phone.setError("Phone invalid!");
+            phone.requestFocus();
+            return;
+        }
+        if (yourPhone.length() != 10) {
+            phone.setError("Phone invalid!");
+            phone.requestFocus();
+            return;
+        }
+        if (yourAddress.isEmpty()) {
+            address.setError("Address invalid!");
+            address.requestFocus();
+            return;
+        }
 
         mAuth.createUserWithEmailAndPassword(uEmail, uPwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -136,6 +146,9 @@ public class RegisterActivity extends AppCompatActivity{
                     user.put("username", uName);
                     user.put("email", uEmail);
                     user.put("password", uPwd);
+                    user.put("name", yourName);
+                    user.put("phone", yourPhone);
+                    user.put("address", yourAddress);
 
                     firestore.collection("users")
                             .add(user);

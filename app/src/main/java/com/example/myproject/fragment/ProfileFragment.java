@@ -3,9 +3,10 @@ package com.example.myproject.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,16 +17,15 @@ import android.widget.Toast;
 
 import com.example.myproject.R;
 import com.example.myproject.activity.HomeActivity;
-import com.example.myproject.activity.LoginActivity;
-import com.example.myproject.model.Product;
+import com.example.myproject.activity.EditActivity;
+import com.example.myproject.activity.OrderActivity;
+import com.example.myproject.model.Order;
 import com.example.myproject.model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -40,6 +40,16 @@ public class ProfileFragment extends Fragment {
     TextView name;
     TextView phone;
     TextView address;
+    User tempUser;
+    CardView edit;
+    CardView order;
+    List<Order> orders;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        retrieveData();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +62,8 @@ public class ProfileFragment extends Fragment {
         name = view.findViewById(R.id.profile_name_value);
         phone = view.findViewById(R.id.profile_phone_value);
         address = view.findViewById(R.id.profile_address_value);
+        edit = view.findViewById(R.id.edit);
+        order = view.findViewById(R.id.order);
         logout = view.findViewById(R.id.logout);
 
         logout.setOnClickListener(view1 -> {
@@ -61,6 +73,25 @@ public class ProfileFragment extends Fragment {
         });
 
         email.setText(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail());
+
+        retrieveData();
+
+        edit.setOnClickListener(view1 -> {
+            Intent intent = new Intent(getActivity(), EditActivity.class);
+            intent.putExtra("user", tempUser);
+            startActivity(intent);
+        });
+
+        order.setOnClickListener(view12 -> {
+            Intent intent = new Intent(getActivity(), OrderActivity.class);
+            intent.putExtra("userId", tempUser.getId());
+            startActivity(intent);
+        });
+
+        return view;
+    }
+
+    public void retrieveData () {
 
         FirebaseFirestore.getInstance()
                 .collection("users")
@@ -82,11 +113,11 @@ public class ProfileFragment extends Fragment {
                                 name.setText(user.getName());
                                 phone.setText(user.getPhone());
                                 address.setText(user.getAddress());
+                                tempUser = user;
+                                tempUser.setId(dc.getDocument().getId());
                             }
                         }
                     }
                 });
-
-        return view;
     }
 }

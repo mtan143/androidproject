@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    style="@style/CardView.Light"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp100"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginStart="@dimen/dp8"
+    android:layout_marginEnd="@dimen/dp8">
+
+
+    <TextView
+        android:id="@+id/order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginStart="@dimen/dp20"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/id"
+        android:textColor="@color/black"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/order_id_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginStart="@dimen/dp50"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/id"
+        android:textColor="@color/black"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/total_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp40"
+        android:layout_marginStart="@dimen/dp20"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/total_product"
+        android:textColor="@color/black"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/total_product_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp40"
+        android:layout_marginStart="@dimen/dp150"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/_2"
+        android:textColor="@color/black"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/total_price_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp15"
+        android:layout_marginTop="65dp"
+        android:layout_marginStart="@dimen/dp20"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/total_price"
+        android:textColor="@color/black"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/total_price_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp15"
+        android:layout_marginTop="65dp"
+        android:layout_marginStart="@dimen/dp150"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/_2"
+        android:textColor="@color/black"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp40"
+        android:layout_marginStart="@dimen/dp288"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/processing"
+        android:textColor="@color/black"
+        tools:ignore="SpUsage" />
+
+
+
+</androidx.cardview.widget.CardView>

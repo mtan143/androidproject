@@ -64,12 +64,19 @@
     <string name="confirm">CONFIRM</string>
     <string name="close">CLOSE</string>
     <string name="name">NAME</string>
-    <string name="address">ADDRESS</string>
     <string name="phone_number">PHONE NUMBER</string>
     <string name="order">ORDER</string>
     <string name="voucher">Voucher</string>
     <string name="edit">EDIT</string>
     <string name="phone">PHONE</string>
+    <string name="username">USERNAME</string>
+    <string name="email">EMAIL</string>
+    <string name="address">ADDRESS</string>
+    <string name="id">ID</string>
+    <string name="total_product">TOTAL PRODUCT:</string>
+    <string name="_2">2</string>
+    <string name="processing">PROCESSING...</string>
+    <string name="contact_us">CONTACT US</string>
 
     <string-array name="menshop">
         <item>Jacket</item>

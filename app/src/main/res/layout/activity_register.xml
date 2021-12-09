@@ -188,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_address"
                     android:hint=" Address"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:textColor="@color/white"
                     android:textColorHighlight="@color/white"
                     android:textColorHint="@color/white"
