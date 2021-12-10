@@ -47,19 +47,9 @@ public class CreateActivity extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
 
 
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        btnCancel.setOnClickListener(view -> finish());
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addProduct();
-            }
-        });
+        btnAdd.setOnClickListener(view -> addProduct());
 
     }
 
@@ -112,7 +102,7 @@ public class CreateActivity extends AppCompatActivity {
         checkData();
         Map<String, Object> data = new HashMap<>();
         data.put("name", txtName.getText().toString());
-        data.put("price", txtPrice.getText().toString());
+        data.put("price", Integer.parseInt(txtPrice.getText().toString()));
         data.put("description", txtDescription.getText().toString());
         data.put("categoryCode", txtCategoryCode.getText().toString());
         data.put("ImgLink", txtImage.getText().toString());
@@ -120,18 +110,10 @@ public class CreateActivity extends AppCompatActivity {
 
         firestore.collection("products")
                 .add(data)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(getApplicationContext(), "Already Created New Product", Toast.LENGTH_LONG).show();
-                        finish();
-                    }
+                .addOnSuccessListener(documentReference -> {
+                    Toast.makeText(getApplicationContext(), "Already Created New Product", Toast.LENGTH_LONG).show();
+                    finish();
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), "Try again!", Toast.LENGTH_LONG).show();
-                    }
-                });
+                .addOnFailureListener(e -> Toast.makeText(getApplicationContext(), "Try again!", Toast.LENGTH_LONG).show());
     }
 }
