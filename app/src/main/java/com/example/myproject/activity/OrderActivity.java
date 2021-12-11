@@ -5,30 +5,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.myproject.R;
 import com.example.myproject.adapter.OrderListAdapter;
 import com.example.myproject.model.Order;
-import com.example.myproject.model.User;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class OrderActivity extends AppCompatActivity {
 
     TextView close;
     ListView all_order;
-//    Button contactUs;
     ArrayList<Order> arraylist;
     OrderListAdapter orderListAdapter;
-    String userId;
+    String username;
+    TextView empty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,20 +32,20 @@ public class OrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order);
 
         close = findViewById(R.id.close);
-//        contactUs = findViewById(R.id.contact);
+        empty = findViewById(R.id.empty_order);
 
         Intent intent = getIntent();
-        userId = (String) intent.getSerializableExtra("userId");
+        username = (String) intent.getSerializableExtra("username");
 
         close.setOnClickListener(view -> finish());
 
         all_order = findViewById(R.id.list_order);
         arraylist = new ArrayList<>();
+        retrieveData();
 
         orderListAdapter = new OrderListAdapter(this, R.layout.payment_item, arraylist);
         all_order.setAdapter(orderListAdapter);
 
-        retrieveData();
     }
 
     public void retrieveData () {
@@ -69,10 +65,18 @@ public class OrderActivity extends AppCompatActivity {
 
                             Order order = dc.getDocument().toObject(Order.class);
 
-                            if (order.getId().equals(userId)) {
-                                arraylist.add(order);
+                            if (order.getUsername() != null) {
+                                if (order.getUsername().equals(username)) {
+                                    order.setId(dc.getDocument().getId());
+                                    arraylist.add(order);
+                                }
                             }
                         }
+                        orderListAdapter.notifyDataSetChanged();
+                    }
+
+                    if (!arraylist.isEmpty()) {
+                        empty.setText("");
                     }
                     System.out.println(arraylist.size());
                 });

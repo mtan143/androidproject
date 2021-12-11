@@ -119,6 +119,7 @@ public class PaymentActivity extends AppCompatActivity {
     public void addOrder() {
 
         List<String> products = new ArrayList<>();
+
         for (Product product : arrayList) {
             products.add(product.getName());
         }

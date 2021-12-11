@@ -77,6 +77,8 @@
     <string name="_2">2</string>
     <string name="processing">PROCESSING...</string>
     <string name="contact_us">CONTACT US</string>
+    <string name="update_your_profile">UPDATE YOUR PROFILE</string>
+    <string name="you_haven_t_any_orders">YOU HAVEN\'T ANY ORDERS</string>
 
     <string-array name="menshop">
         <item>Jacket</item>

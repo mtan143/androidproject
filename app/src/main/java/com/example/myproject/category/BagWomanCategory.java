@@ -81,33 +81,30 @@ public class BagWomanCategory extends AppCompatActivity {
      */
     public void retrieveData () {
         dbFirestore.collection("products")
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                .addSnapshotListener((value, error) -> {
 
-                        if (error != null) {
-                            if (progressDialog.isShowing()) {
-                                progressDialog.dismiss();
+                    if (error != null) {
+                        if (progressDialog.isShowing()) {
+                            progressDialog.dismiss();
+                        }
+                        Log.e("Firestore Error", error.getMessage());
+                        return;
+                    }
+
+                    for (DocumentChange dc : value.getDocumentChanges()) {
+
+                        if (dc.getType() == DocumentChange.Type.ADDED) {
+
+                            Product product = dc.getDocument().toObject(Product.class);
+
+                            if (product.getCategoryCode().equals("w_bag")) {
+                                product.setId(dc.getDocument().getId());
+                                arrayList.add(product);
                             }
-                            Log.e("Firestore Error", error.getMessage());
-                            return;
                         }
 
-                        for (DocumentChange dc : value.getDocumentChanges()) {
-
-                            if (dc.getType() == DocumentChange.Type.ADDED) {
-
-                                Product product = dc.getDocument().toObject(Product.class);
-
-                                if (product.getCategoryCode().equals("w_bag")) {
-                                    product.setId(dc.getDocument().getId());
-                                    arrayList.add(product);
-                                }
-                            }
-
-                            adapter.notifyDataSetChanged();
-                            if (progressDialog.isShowing()) progressDialog.dismiss();
-                        }
+                        adapter.notifyDataSetChanged();
+                        if (progressDialog.isShowing()) progressDialog.dismiss();
                     }
                 });
     }

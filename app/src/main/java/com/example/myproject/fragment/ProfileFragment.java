@@ -84,7 +84,7 @@ public class ProfileFragment extends Fragment {
 
         order.setOnClickListener(view12 -> {
             Intent intent = new Intent(getActivity(), OrderActivity.class);
-            intent.putExtra("userId", tempUser.getId());
+            intent.putExtra("username", tempUser.getUsername());
             startActivity(intent);
         });
 

@@ -1,99 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    style="@style/CardView.Light"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/dp100"
-    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginTop="@dimen/dp40"
     android:layout_marginStart="@dimen/dp8"
-    android:layout_marginEnd="@dimen/dp8">
+    android:layout_marginEnd="@dimen/dp8"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp150">
+
+    <androidx.cardview.widget.CardView
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp150"
+
+        android:id="@+id/card_view">
 
 
-    <TextView
-        android:id="@+id/order_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/dp15"
-        android:layout_marginTop="@dimen/dp10"
-        android:layout_marginStart="@dimen/dp20"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/id"
-        android:textColor="@color/black"
-        tools:ignore="SpUsage" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/order_id_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/dp15"
-        android:layout_marginTop="@dimen/dp10"
-        android:layout_marginStart="@dimen/dp50"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/id"
-        android:textColor="@color/black"
-        tools:ignore="SpUsage" />
+            <TextView
+                android:id="@+id/order_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/id"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp15"
+                tools:ignore="NotSibling,SpUsage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginStart="@dimen/dp20"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="7dp" />
 
-    <TextView
-        android:id="@+id/total_product"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/dp15"
-        android:layout_marginTop="@dimen/dp40"
-        android:layout_marginStart="@dimen/dp20"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/total_product"
-        android:textColor="@color/black"
-        tools:ignore="SpUsage" />
+            <TextView
+                android:id="@+id/order_id_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/id"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp15"
+                tools:ignore="SpUsage"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="@dimen/dp150"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/dp10"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="7dp" />
 
-    <TextView
-        android:id="@+id/total_product_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/dp15"
-        android:layout_marginTop="@dimen/dp40"
-        android:layout_marginStart="@dimen/dp150"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/_2"
-        android:textColor="@color/black"
-        tools:ignore="SpUsage" />
+            <TextView
+                android:id="@+id/total_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/total_product"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp15"
+                tools:ignore="SpUsage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/total_price_payment"
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp10"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="74dp" />
 
-    <TextView
-        android:id="@+id/total_price_payment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/dp15"
-        android:layout_marginTop="65dp"
-        android:layout_marginStart="@dimen/dp20"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/total_price"
-        android:textColor="@color/black"
-        tools:ignore="SpUsage" />
+            <TextView
+                android:id="@+id/total_product_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/_2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp15"
+                tools:ignore="SpUsage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/total_price_value"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginStart="@dimen/dp150"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="74dp" />
 
-    <TextView
-        android:id="@+id/total_price_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/dp15"
-        android:layout_marginTop="65dp"
-        android:layout_marginStart="@dimen/dp150"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/_2"
-        android:textColor="@color/black"
-        tools:ignore="SpUsage" />
+            <TextView
+                android:id="@+id/total_price_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/total_price"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp15"
+                tools:ignore="SpUsage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/order_id"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginStart="@dimen/dp20"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="34dp" />
 
-    <TextView
-        android:id="@+id/status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/dp15"
-        android:layout_marginTop="@dimen/dp40"
-        android:layout_marginStart="@dimen/dp288"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/processing"
-        android:textColor="@color/black"
-        tools:ignore="SpUsage" />
+            <TextView
+                android:id="@+id/total_price_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/_2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp15"
+                app:layout_constraintTop_toBottomOf="@id/order_id_value"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/dp150"
+                android:layout_marginTop="@dimen/dp10"
+                tools:ignore="SpUsage"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="34dp" />
+
+            <Button
+                android:id="@+id/cancel_order"
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp40"
+                android:layout_gravity="center"
+                android:background="@drawable/shape_button_black"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/dp10"
+                tools:layout_editor_absoluteY="103dp" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/processing"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="@dimen/dp15"
+                tools:ignore="SpUsage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

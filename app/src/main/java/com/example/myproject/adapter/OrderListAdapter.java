@@ -7,14 +7,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.myproject.R;
 import com.example.myproject.model.Order;
 import com.example.myproject.model.Product;
 import com.example.myproject.model.User;
+import com.example.myproject.product.ProductDetailActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -34,6 +37,8 @@ public class OrderListAdapter extends BaseAdapter {
         this.layout = layout;
         this.arrayList = arrayList;
     }
+
+
 
     @Override
     public int getCount() {
@@ -65,8 +70,10 @@ public class OrderListAdapter extends BaseAdapter {
             viewHolder.totalProduct = view.findViewById(R.id.total_product_value);
             viewHolder.totalPrice = view.findViewById(R.id.total_price_value);
             viewHolder.status = view.findViewById(R.id.status);
+            viewHolder.cancelOrder = view.findViewById(R.id.cancel_order);
 
             view.setTag(viewHolder);
+
         } else {
             viewHolder = (OrderListAdapter.ViewHolder) view.getTag();
         }
@@ -74,6 +81,28 @@ public class OrderListAdapter extends BaseAdapter {
         viewHolder.totalProduct.setText(String.valueOf(arrayList.get(i).getProducts().size()));
         viewHolder.totalPrice.setText("AU$ " + new DecimalFormat("#,###").format(arrayList.get(i).getTotalPrice()));
         viewHolder.status.setText(arrayList.get(i).getStatus());
+
+        if (arrayList.get(i).getStatus().equals("Cancelling")) {
+            viewHolder.cancelOrder.setEnabled(false);
+        }
+
+        viewHolder.cancelOrder.setOnClickListener(view1 -> {
+            arrayList.get(i).setStatus("Cancelling");
+            viewHolder.cancelOrder.setEnabled(false);
+
+            Toast.makeText(context, "Waiting to cancel", Toast.LENGTH_SHORT).show();
+
+            FirebaseFirestore.getInstance()
+                    .collection("orders")
+                    .document(arrayList.get(i).getId())
+                    .update("status", "Cancelling")
+                    .addOnFailureListener(e ->
+                            Toast.makeText(context,
+                                    "Failed! Try again", Toast.LENGTH_LONG).show());
+        });
+
+
+
         return view;
     }
 
@@ -83,6 +112,7 @@ public class OrderListAdapter extends BaseAdapter {
         TextView totalProduct;
         TextView totalPrice;
         TextView status;
+        Button cancelOrder;
 
     }
 

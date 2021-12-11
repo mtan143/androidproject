@@ -101,6 +101,7 @@ public class EditActivity extends AppCompatActivity {
     }
 
     public boolean checkData () {
+
         if (username_value.isEmpty()) {
             username.setError("Username is required!");
             username.requestFocus();
