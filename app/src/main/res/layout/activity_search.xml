@@ -7,10 +7,9 @@
     android:background="@color/black"
     tools:context=".activity.SearchActivity">
 
-
     <SearchView
         android:id="@+id/search_view"
-        android:layout_width="377dp"
+        android:layout_width="337dp"
         android:layout_height="52dp"
         android:layout_marginTop="4dp"
         android:iconifiedByDefault="false"
@@ -19,6 +18,8 @@
         android:theme="@style/InputText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/dp40"
+        app:layout_constraintBottom_toTopOf="@id/list_search"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -32,14 +33,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
+    <Button
+        android:id="@+id/iconSearch"
+        android:layout_width="26dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableTint="@color/white"
+        android:textSize="@dimen/sp14"
+        app:drawableStartCompat="@drawable/ic_baseline_search_24"
+        app:layout_constraintStart_toEndOf="@id/search_view"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_search"
         android:layout_width="409dp"
-        android:layout_height="664dp"
+        android:layout_height="680dp"
         android:background="#E7E7E7"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp53"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

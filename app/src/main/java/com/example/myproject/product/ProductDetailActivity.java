@@ -113,26 +113,23 @@ public class ProductDetailActivity extends AppCompatActivity {
         });
 
         //set up add to cart button
-        btnAddToCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnAddToCart.setOnClickListener(view -> {
 
-                if (product.isCart()) {
+            if (product.isCart()) {
 
-                    Toast.makeText(getApplicationContext(), "You've already added it to cart!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "You've already added it to cart!", Toast.LENGTH_LONG).show();
 
-                } else {
-                    product.setCart(true);
-                    firestore.collection("products")
-                            .document(product.getId())
-                            .update("cart", true)
-                            .addOnSuccessListener(
-                                    aVoid -> Toast.makeText(getApplicationContext(),
-                                            "Check your cart!", Toast.LENGTH_LONG).show())
-                            .addOnFailureListener(e ->
-                                    Toast.makeText(getApplicationContext(),
-                                            "Failed! Try again", Toast.LENGTH_LONG).show());
-                }
+            } else {
+                product.setCart(true);
+                firestore.collection("products")
+                        .document(product.getId())
+                        .update("cart", true)
+                        .addOnSuccessListener(
+                                aVoid -> Toast.makeText(getApplicationContext(),
+                                        "Check your cart!", Toast.LENGTH_LONG).show())
+                        .addOnFailureListener(e ->
+                                Toast.makeText(getApplicationContext(),
+                                        "Failed! Try again", Toast.LENGTH_LONG).show());
             }
         });
     }

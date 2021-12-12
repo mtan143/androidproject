@@ -47,12 +47,7 @@ public class ShoesWomanCategory extends AppCompatActivity {
         title.setText("SHOES");
 
         btnDone = findViewById(R.id.btnDone8);
-        btnDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        btnDone.setOnClickListener(view -> finish());
 
         gridView = findViewById(R.id.shoes_woman);
         dbFirestore = FirebaseFirestore.getInstance();
@@ -107,13 +102,10 @@ public class ShoesWomanCategory extends AppCompatActivity {
      * Handle item click
      */
     public void itemClick () {
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getApplicationContext(), ProductDetailActivity.class);
-                intent.putExtra("product", arrayList.get(i));
-                startActivity(intent);
-            }
+        gridView.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(getApplicationContext(), ProductDetailActivity.class);
+            intent.putExtra("product", arrayList.get(i));
+            startActivity(intent);
         });
     }
 }
